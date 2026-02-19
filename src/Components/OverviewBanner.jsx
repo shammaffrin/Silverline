@@ -1,24 +1,34 @@
 import React from "react";
+import md from "../assets/Management/md.jpeg"
+import shamila from "../assets/Management/shamila.jpeg"
+import Thanzil from "../assets/Management/thanzil.jpeg"
 
 const Card = ({ image, name, role, dark }) => {
   return (
-    <div className="flex items-center shadow-md">
-      <img
-        src={image}
-        alt={name}
-        className="w-20 h-20 object-cover"
-      />
+    <div className="flex flex-col items-center w-50 rounded-xl overflow-hidden shadow-lg bg-white">
+
+      {/* Image */}
+      <div className="w-full h-50">
+        <img
+          src={image}
+          alt={name}
+          className="w-50 h-50 object-cover"
+        />
+      </div>
+
+      {/* Text Section */}
       <div
-        className={`px-6 py-4 ${
-          dark ? "bg-[#4a4346] text-white" : "bg-gray-400 text-white"
+        className={`w-full text-center py-4 px-3 ${
+          dark ? "bg-[#4a4346] text-white" : "bg-gray-200 text-gray-800"
         }`}
       >
-        <h3 className="font-semibold">{name}</h3>
-        <p className="text-sm opacity-90">({role})</p>
+        <h3 className="font-semibold text-lg">{name}</h3>
+        <p className="text-sm opacity-80">{role}</p>
       </div>
     </div>
   );
 };
+
 
 export default function ManagementChart() {
   return (
@@ -32,9 +42,10 @@ export default function ManagementChart() {
 
         {/* MD */}
         <Card
-          image="/md.jpg"
-          name="Managing Director"
-          role="MD"
+          image={md}
+          className="object-cover"
+          name="Ummer Farook"
+          role="(Managing Director)"
           dark
         />
 
@@ -57,9 +68,9 @@ export default function ManagementChart() {
           <div className="flex flex-col items-center">
 
             <Card
-              image="/person1.jpg"
-              name="Chief of Staff"
-              role="Manager"
+              image={shamila}
+              name="Shameela Nafih"
+              role="(Chief of Staff)"
               dark
             />
 
@@ -76,9 +87,9 @@ export default function ManagementChart() {
           {/* Person 2 */}
           <div className="flex flex-col items-center">
             <Card
-              image="/person2.jpg"
-              name="Business Manager"
-              role="Manager"
+              image={Thanzil}
+              name="Thanzil Athinan"
+              role="(Business Manager)"
               dark
             />
           </div>

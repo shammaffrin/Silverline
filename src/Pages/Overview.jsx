@@ -6,6 +6,7 @@ import OverViewPolicies from '../Components/OverViewPolicies'
 import OverWelcome from '../Components/OverviewWelcome';
 import AchieversBoard from '../Components/OverVIEWABoard';
 import CommunicationSection from '../Components/OverviewCommunication';
+import OrgChartSection from '../Components/OrgChart1';
 
 const Overview = () => {
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
@@ -20,6 +21,7 @@ const Overview = () => {
       <OverVision/>
       <OverViewPolicies />
       <OverviewBanner />
+      <OrgChartSection />
       <AchieversBoard />
       <CommunicationSection />
       
