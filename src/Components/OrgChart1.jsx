@@ -6,7 +6,7 @@ export default function OrgChartSection() {
   const [active, setActive] = useState("administration");
 
   return (
-    <div className="bg-gray-50 py-16 px-10">
+    <div className=" hidden lg:block bg-gray-50 py-16 px-10">
 
       {/* Section Title */}
       <h2 className="text-2xl font-bold mb-6">
