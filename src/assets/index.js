@@ -5,7 +5,7 @@ import Herobg2 from "./bannerimg2.jpg";
 import Herobg3 from "./bannerimg3.jpg";
 import Herobg4 from "./bannerimg4.jpg";
 import Herobg5 from "./bannerimg3.jpg";
-import CareerBanner1 from "./careerbanner1.png";
+import CareerBanner1 from "./careerbanner1.jpg";
 import CareerBanner2 from "./careerbanner2.png";
 import Productbg from "./product-bg.jpeg";
 import Rentalsm1 from "./rental-sm-1.jpeg";
