@@ -19,7 +19,7 @@ export default function OrgChartSection() {
           <button
             key={key}
             onClick={() => setActive(key)}
-            className={`px-5 py-2 rounded transition ${
+            className={`px-4 py-2 rounded transition ${
               active === key
                 ? "bg-[#C97E7E] text-white"
                 : "bg-gray-200 hover:bg-gray-300"
@@ -31,7 +31,7 @@ export default function OrgChartSection() {
       </div>
 
       {/* Org Chart */}
-      <div className="bg-white rounded-xl shadow-lg p-10">
+      <div className="bg-white rounded-xl shadow-lg ">
         <OrgChart data={sections[active].data} />
       </div>
 

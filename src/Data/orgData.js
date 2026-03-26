@@ -240,5 +240,241 @@ export const sections = {
         }
       ]
     }
+  },
+
+  HSE: {
+    title: "HSE",
+    data: {
+      name: "Arjun Ramachandran",
+      role: "Operations Manager",
+      children: [
+        {
+          name: "Athul C.S",
+          role: "Production & HSE Head",
+          children: [
+            { name: "Ajeesh Biju", role: "HSE Coordinator", children: [] },
+            { name: "Azif Shajim", role: "HSE Coordinator", children: [] },
+          ]
+        }
+      ]
+    }
+  },
+
+  Production: {
+  title: "Production",
+  data: {
+    name: "Arjun Ramachandran",
+    role: "Operations Manager",
+    children: [
+      {
+        name: "Athul C.S",
+        role: "Production & HSE Head",
+        children: [
+          {
+            name: "Aravind Krishnan",
+            role: "Operations Incharge - Production",
+            children: [
+              {
+                name: "Mohamed Falah",
+                role: "Production Coordinator",
+                children: [
+                  { name: "Foreman 1", role: "Foreman", children: [] },
+                  { name: "Aluminium Fabricator 2", role: "Aluminium Fabricator", children: [] },
+                  { name: "Welder 13", role: "Welder", children: [] },
+                  { name: "Carpenter 7", role: "Carpenter", children: [] },
+                  { name: "Plumber 3", role: "Plumber", children: [] },
+                  { name: "Helper 1", role: "Helper", children: [] },
+                  { name: "Electrician 2", role: "Electrician", children: [] },
+                  { name: "Electrical cum Driver 1", role: "Electrical cum Driver", children: [] },
+                  { name: "Painter 5", role: "Painter", children: [] }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
+},
+
+SALES: {
+  title: "SALES",
+  data: {
+    name: "Thanzil Athinan",
+    role: "Business Manager",
+    children: [
+      {
+        name: "Abdul Hakeem",
+        role: "Sales Admin",
+        children: [
+          { name: "Lakshmi K", role: "Sales Coordinator", children: [] }
+        ]
+      },
+      {
+        name: "Raj Thomas",
+        role: "Sr. Sales Engineer",
+        children: [
+        ]
+      },
+      {
+        name: "Shamil",
+        role: "Sr. Sales Engineer",
+        children: [
+           { name: "Mohd Nishad", role: "Sales Engineer", children: [] },
+          { name: "Ashik K", role: "Sales Engineer", children: [] },
+          { name: "Shabeer", role: "Sales Coordinator Executive", children: [] },
+          { name: "Mohd Sifin", role: "Sales Executive", children: [] }
+        ]
+      },
+      {
+        name: "Afsal Nazar",
+        role: "Sr. Sales Engineer",
+        children: [
+        ]
+      },
+      {
+        name: "Sharath K",
+        role: "Sr. Sales Engineer",
+        children: [
+          { name: "Nabeel Sha", role: "Sales Engineer", children: [] }
+        ]
+      },
+      {
+        name: "Saif Muhammed",
+        role: "Sr. Sales Engineer",
+        children: [
+          { name: "Amad M", role: "Sales Executive", children: [] },
+          { name: "Fasil P", role: "Sales Executive", children: [] }
+        ]
+      },
+      {
+        name: "Jesvin Antony",
+        role: "Sr. Sales Engineer",
+        children: [
+          { name: "Anwar", role: "Sales Executive", children: [] }
+        ]
+      }
+    ]
+  }
+} ,
+
+ Collections: {
+    title: "Collections",
+    data: {
+      name: "Thanzil Athinan",
+      role: "Buisness Manager",
+      children: [
+        {
+          name: "Shafi K",
+          role: "Collection Team Lead",
+          children: [
+            { name: "Misab M", role: "Collection Coordinator & Documents Controller", children: [] },
+            { name: "Sainuddeen", role: "Credit Controller", children: [] },
+            { name: "Irshan K", role: "Credit Controller", children: [] },
+            { name: "Ashraf MPR", role: "Collection Agent", children: [] },
+            { name: "Mayed Abdulla", role: "Debt Collector", children: [] },
+            { name: "Saeed Jasim", role: "Debt Collector", children: [] },
+            { name: "Saqer Khalifa", role: "Debt Collector", children: [] },
+            { name: "Driver 1", role: "", children: [] },
+          ]
+        }
+      ]
+    }
+  },
+
+  Invoice: {
+  title: "INVOICE",
+  data: {
+    name: "Thanzil Athinan",
+    role: "Business Manager",
+    children: [
+      {
+        name: "Ajeesh M",
+        role: "Invoice Team Lead",
+        children: [
+          {
+            name: "Sayojiya J",
+            role: "Invoice Coordinator",
+            children: []
+          },
+          {
+            name: "Athira M",
+            role: "Invoice Coordinator",
+            children: []
+          },
+          {
+            name: "Mohd Asif",
+            role: "Sales Secretary",
+            children: []
+          },
+          {
+            name: "Mohd Shibili",
+            role: "Sales Secretary",
+            children: []
+          },
+          {
+            name: "Diya R",
+            role: "Sales Secretary",
+            children: []
+          },
+          {
+            name: "Aswin P",
+            role: "Sales Secretary",
+            children: []
+          },
+          {
+            name: "Ayishath",
+            role: "Sales Secretary",
+            children: []
+          },
+          {
+            name: "Shehin",
+            role: "Sales Secretary",
+            children: []
+          },
+          {
+            name: "Sreelajith V",
+            role: "Sales Secretary",
+            children: []
+          },
+          {
+            name: "Arun K",
+            role: "Sales Secretary",
+            children: []
+          },
+          {
+            name: "Aswathi A",
+            role: "Sales Secretary",
+            children: []
+          },
+          {
+            name: "Stefy K",
+            role: "Sales Secretary",
+            children: []
+          },
+          {
+            name: "Safna NA",
+            role: "Sales Secretary",
+            children: []
+          },
+          {
+            name: "Shahina",
+            role: "Sales Secretary",
+            children: []
+          },
+          {
+            name: "Anju A",
+            role: "Sales Secretary",
+            children: []
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+
+
+
 };
