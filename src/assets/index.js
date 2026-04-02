@@ -1,4 +1,5 @@
 import Logo from "./Logo.png";
+import Avatar from "./avatar.png";
 import LogoNew from "./LogoNew.png";
 import Herobg1 from "./bannerimg.jpg";
 import Herobg2 from "./bannerimg2.jpg";
@@ -106,6 +107,7 @@ import HeavyMachineryVec from "./Excavator.svg"
 
 export {
   Logo,
+  Avatar,
   LogoNew,
   Herobg1,
   Herobg2,

@@ -1,50 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import categoriesData from "../Data/productData";
-import { FiPlus, FiMinus } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 const ProductHero = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Generators");
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedRange, setSelectedRange] = useState(null);
   const [selectedSub, setSelectedSub] = useState(null);
-  const [expandedCategory, setExpandedCategory] = useState("Generators");
-
   const [searchQuery, setSearchQuery] = useState("");
 
   const navigate = useNavigate();
 
   const categories = Object.keys(categoriesData);
-  const selectedData = selectedCategory ? categoriesData[selectedCategory] : null;
+  const selectedData = selectedCategory
+    ? categoriesData[selectedCategory]
+    : null;
 
-  // Auto-select first sub when category changes
-  useEffect(() => {
-    if (selectedData) {
-      const subs = Object.keys(selectedData.data);
-      setSelectedSub(subs.length > 0 ? subs[0] : null);
-    }
-  }, [selectedCategory]);
-
-  const toggleCategory = (cat) => {
-    if (expandedCategory === cat) {
-      setExpandedCategory(null);
-    } else {
-      setExpandedCategory(cat);
-      setSelectedCategory(cat);
-    }
-  };
-
-  // ============================================================
-  //   GLOBAL SEARCH ACROSS ALL CATEGORIES & SUBCATEGORIES
-  // ============================================================
+  // ================= GLOBAL SEARCH =================
   const globalResults = [];
 
-  if (searchQuery.trim().length > 0) {
+  if (searchQuery.trim()) {
     const q = searchQuery.toLowerCase();
 
     categories.forEach((cat) => {
       Object.keys(categoriesData[cat].data).forEach((sub) => {
         categoriesData[cat].data[sub].forEach((item, idx) => {
-          const text = `${item.brand} ${item.capacity}`.toLowerCase();
+          const text = Object.values(item).join(" ").toLowerCase();
           if (text.includes(q)) {
             globalResults.push({
               ...item,
@@ -64,102 +45,88 @@ const ProductHero = () => {
     <div>
       <Navbar />
 
-      {/* ===========================================================
-          DESKTOP LAYOUT
-      ============================================================ */}
+      {/* ================= DESKTOP ================= */}
       <section className="hidden md:flex w-full min-h-[100vh] bg-[#eee] pt-30">
-        {/* Sidebar */}
+        {/* SIDEBAR */}
         <div className="w-1/4 p-4">
-
-          {/* SEARCH BAR */}
           <input
             type="text"
-            placeholder="Search by brand or capacity..."
-            className="w-full px-3 py-2 mb-4 rounded-full border border-gray-300"
+            placeholder="Search..."
+            className="w-full px-3 py-1 mb-4 rounded-full border"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
 
-          {/* Hide categories when global search is active */}
           {!showGlobal && (
             <ul>
               {categories.map((cat) => (
-                <li key={cat} className="mb-2">
+                <li key={cat} className="mb-1">
+                  {/* CATEGORY */}
                   <div
-                    className={`flex justify-between items-center cursor-pointer p-1 rounded hover:bg-gray-200 ${
-                      selectedCategory === cat ? "font-bold" : ""
+                    className={`cursor-pointer hover:bg-gray-300 text-sm pb-1 px-2 rounded ${
+                      selectedCategory === cat ? "font-bold py-1 bg-gray-200" : ""
                     }`}
-                    onClick={() => toggleCategory(cat)}
+                    onClick={() => {
+                      setSelectedCategory(cat);
+                      setSelectedRange(null); // 👈 reset so sidebar stays closed
+                      setSelectedSub(null);
+                    }}
                   >
-                    <span>{cat}</span>
-                    {expandedCategory === cat ? (
-                      <FiMinus className="text-sm" />
-                    ) : (
-                      <FiPlus className="text-sm" />
-                    )}
+                    {cat}
                   </div>
 
-                  {expandedCategory === cat && (
-                    <div className="ml-3 mt-2 flex flex-wrap gap-2">
-                      {Object.keys(categoriesData[cat].data).map((sub) => (
-                        <div
-                          key={sub}
-                          className={`text-xs cursor-pointer text-center px-2 py-2 rounded border transition-all w-[45%] lg:w-[30%] ${
-                            selectedSub === sub
-                              ? "bg-gray-300 font-semibold border-gray-400"
-                              : "hover:bg-gray-200 border-gray-200"
-                          }`}
-                          onClick={() => {
-                            setSelectedCategory(cat);
-                            setSelectedSub(sub);
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                          }}
-                        >
-                          {sub}
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  {/* RANGE DROPDOWN (ONLY AFTER RANGE SELECTED) */}
+                  {selectedCategory === cat &&
+                    selectedData?.type === "Capacity" &&
+                    selectedData?.ranges &&
+                    selectedRange && (
+                      <div className="ml-3 mt-1">
+                        {Object.keys(selectedData.ranges).map((range) => (
+                          <div
+                            key={range}
+                            className={`text-xs cursor-pointer py-1 hover:underline ${
+                              selectedRange === range ? "font-semibold" : ""
+                            }`}
+                            onClick={() => {
+                              setSelectedRange(range);
+                              setSelectedSub(null);
+                            }}
+                          >
+                            {range}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                 </li>
               ))}
             </ul>
           )}
         </div>
 
-        {/* Main Content */}
+        {/* MAIN CONTENT */}
         <div className="flex-1 p-6">
-
-          {/* =====================================================
-              GLOBAL SEARCH RESULTS (DESKTOP)
-          ===================================================== */}
+          {/* ===== SEARCH RESULTS ===== */}
           {showGlobal && (
             <div>
-              <h3 className="text-xl font-semibold mb-4">
-                Search Results ({globalResults.length})
-              </h3>
+              <h3 className="text-xl mb-4">Results ({globalResults.length})</h3>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                {globalResults.length === 0 && (
-                  <p className="text-gray-500">No items found...</p>
-                )}
-
+              <div className="grid grid-cols-3 gap-6">
                 {globalResults.map((item, i) => (
                   <div
                     key={i}
-                    className="rounded p-4 text-center bg-[#ece5e5] transition cursor-pointer hover:shadow-lg"
+                    className="p-4 bg-white rounded shadow cursor-pointer"
                     onClick={() =>
                       navigate(
-                        `/product/${item.category}/${item.subcategory}/${item.index}`
+                        `/product/${item.category}/${item.subcategory}/${item.index}`,
                       )
                     }
                   >
                     <img
                       src={item.image}
-                      className="w-full h-32 object-contain mb-2"
+                      className="h-32 w-full object-contain"
                     />
-                    <p className="font-medium">{item.brand || item.capacity}</p>
-                    <p className="text-xs text-gray-600">
-                      {item.category} › {item.subcategory}
+                    <p className="text-center mt-2">
+                      {item.brand || item.capacity}
                     </p>
                   </div>
                 ))}
@@ -167,165 +134,142 @@ const ProductHero = () => {
             </div>
           )}
 
-          {/* =====================================================
-              NORMAL CATEGORY VIEW (DESKTOP)
-          ===================================================== */}
+          {/* ===== EMPTY STATE ===== */}
+          {!showGlobal && !selectedCategory && (
+            <div className="h-[70vh] flex items-center justify-center text-gray-500">
+              Select a category to view products
+            </div>
+          )}
+
+          {/* ===== BRAND TYPE ===== */}
           {!showGlobal &&
-            selectedData &&
-            selectedSub &&
-            selectedData.data[selectedSub] && (
-              <div>
-                <h3 className="text-xl font-semibold mb-4">{selectedSub}</h3>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                  {selectedData.data[selectedSub].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="rounded p-4 text-center bg-[#ece5e5] transition cursor-pointer hover:shadow-lg"
-                      onClick={() =>
-                        navigate(
-                          `/product/${selectedCategory}/${selectedSub}/${idx}`
-                        )
-                      }
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.brand}
-                        className="w-full h-32 object-contain mb-2"
-                      />
-                      <p className="font-medium">{item.brand}</p>
-                    </div>
-                  ))}
-                </div>
-
-                {selectedData.description && (
-                  <p className="mt-6 text-gray-700">
-                    {selectedData.description}
-                  </p>
-                )}
+            selectedCategory &&
+            selectedData?.type === "Brand" && (
+              <div className="grid grid-cols-3 gap-6">
+                {Object.keys(selectedData.data).map((brand) => (
+                  <div
+                    key={brand}
+                    className="p-4 bg-white rounded shadow text-center cursor-pointer"
+                    onClick={() =>
+                      navigate(`/product/${selectedCategory}/${brand}/0`)
+                    }
+                  >
+                    <img
+                      src={selectedData.data[brand][0].image}
+                      className="h-24 mx-auto"
+                    />
+                    <p className="mt-2">{brand}</p>
+                  </div>
+                ))}
               </div>
+            )}
+
+          {/* ===== CAPACITY TYPE ===== */}
+          {!showGlobal &&
+            selectedCategory &&
+            selectedData?.type === "Capacity" && (
+              <>
+                {/* STEP 1: RANGES */}
+                {!selectedRange && (
+                  <div className="grid grid-cols-3 gap-6">
+                    {Object.entries(selectedData.ranges).map(
+                      ([range, value]) => (
+                        <div
+                          key={range}
+                          onClick={() => {
+                            setSelectedRange(range); // 👈 triggers sidebar dropdown
+                            setSelectedSub(null);
+                          }}
+                          className="p-6 bg-white rounded shadow cursor-pointer text-center"
+                        >
+                          <img src={value.image} className="h-24 mx-auto" />
+                          <p className="mt-2 font-semibold">{range}</p>
+                        </div>
+                      ),
+                    )}
+                  </div>
+                )}
+
+                {/* STEP 2: CAPACITIES */}
+                {selectedRange && !selectedSub && (
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    {selectedData.ranges[selectedRange].capacities.map(
+                      (cap) => {
+                        const firstItem = selectedData.data[cap]?.[0];
+
+                        return (
+                          <div
+                            key={cap}
+                            onClick={() => setSelectedSub(cap)}
+                            className="p-4 bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer text-center"
+                          >
+                            {firstItem && (
+                              <img
+                                src={firstItem.image}
+                                alt={cap}
+                                className="h-24 mx-auto object-contain mb-2"
+                              />
+                            )}
+
+                            <p className="font-semibold">{cap}</p>
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+
+                {/* STEP 3: PRODUCTS */}
+                {selectedSub && (
+                  <div>
+                    <h3 className="mb-4 text-xl">{selectedSub}</h3>
+
+                    <div className="grid grid-cols-3 gap-6">
+                      {selectedData.data[selectedSub]?.map((item, idx) => (
+                        <div
+                          key={idx}
+                          className="p-4 bg-white rounded shadow cursor-pointer text-center"
+                          onClick={() =>
+                            navigate(
+                              `/product/${selectedCategory}/${selectedSub}/${idx}`,
+                            )
+                          }
+                        >
+                          <img src={item.image} className="h-24 mx-auto" />
+                          <p className="mt-2">{item.brand}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
             )}
         </div>
       </section>
 
-      {/* ===========================================================
-          MOBILE LAYOUT
-      ============================================================ */}
-      <section className="flex flex-col md:hidden w-full min-h-screen bg-[#f5f5f5] px-4 pt-32 pb-10 gap-6">
-        
-        {/* SEARCH BAR */}
+      {/* ================= MOBILE ================= */}
+      <section className="md:hidden p-4 pt-28">
         <input
           type="text"
-          placeholder="Search by brand or capacity..."
-          className="w-full px-3 py-2 rounded-full border border-gray-300"
+          placeholder="Search..."
+          className="w-full px-3 py-2 mb-4 rounded-full border"
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
 
-        {/* =====================================================
-            GLOBAL SEARCH RESULTS (MOBILE)
-        ===================================================== */}
-        {showGlobal && (
-          <div className="grid grid-cols-2 gap-4 mt-4">
-            {globalResults.length === 0 && (
-              <p className="text-gray-500">No items found...</p>
-            )}
-
+        {showGlobal ? (
+          <div className="grid grid-cols-2 gap-4">
             {globalResults.map((item, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-xl p-3 shadow-md flex flex-col items-center cursor-pointer"
-                onClick={() =>
-                  navigate(
-                    `/product/${item.category}/${item.subcategory}/${item.index}`
-                  )
-                }
-              >
-                <img src={item.image} className="w-full h-24 object-contain mb-2" />
-                <p className="text-sm font-semibold text-center">{item.brand}</p>
-                <p className="text-[10px] text-gray-500">
-                  {item.category} › {item.subcategory}
-                </p>
+              <div key={i} className="p-3 bg-white rounded shadow text-center">
+                <img src={item.image} className="h-20 mx-auto" />
+                <p>{item.brand || item.capacity}</p>
               </div>
             ))}
           </div>
-        )}
-
-        {/* =====================================================
-            NORMAL CATEGORY VIEW (MOBILE)
-        ===================================================== */}
-        {!showGlobal && (
-          <>
-            {/* CATEGORY SELECT */}
-            <div className="relative w-full">
-              <select
-                className="w-full appearance-none px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-700 shadow-sm"
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-              >
-                {categories.map((cat) => (
-                  <option key={cat} value={cat}>
-                    {cat}
-                  </option>
-                ))}
-              </select>
-
-              <div className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-gray-400 text-sm">
-                ▼
-              </div>
-            </div>
-
-            {/* SUBCATEGORY SCROLL */}
-            <div className="flex gap-2 overflow-x-auto scrollbar-hide">
-              {selectedData &&
-                Object.keys(selectedData.data).map((sub) => (
-                  <button
-                    key={sub}
-                    onClick={() => setSelectedSub(sub)}
-                    className={`px-4 py-2 rounded-full whitespace-nowrap transition border ${
-                      selectedSub === sub
-                        ? "bg-black text-white border-black"
-                        : "bg-white text-gray-600 border-gray-300"
-                    }`}
-                  >
-                    {sub}
-                  </button>
-                ))}
-            </div>
-
-            {/* PRODUCTS */}
-            {selectedData &&
-              selectedSub &&
-              selectedData.data[selectedSub] && (
-                <div className="grid grid-cols-2 gap-4 mt-4">
-                  {selectedData.data[selectedSub].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-white rounded-xl p-3 shadow-md flex flex-col items-center cursor-pointer"
-                      onClick={() =>
-                        navigate(
-                          `/product/${selectedCategory}/${selectedSub}/${idx}`
-                        )
-                      }
-                    >
-                      <img
-                        src={item.image}
-                        className="w-full h-24 object-contain mb-2"
-                      />
-                      <p className="text-sm font-semibold text-center">
-                        {item.brand}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-            {selectedData?.description && (
-              <p className="text-gray-600 text-sm mt-4 leading-relaxed">
-                {selectedData.description}
-              </p>
-            )}
-          </>
+        ) : (
+          <div className="text-center text-gray-500">
+            Mobile flow can be enhanced next 🚀
+          </div>
         )}
       </section>
     </div>

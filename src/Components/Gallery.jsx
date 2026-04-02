@@ -1,15 +1,15 @@
-import React from 'react';
-import { Related1 } from '../assets';
+import React from "react";
+import {
+  Photo16,
+  Photo2,
+  Photo60,
+  Photo75,
+  Photo84,
+  Photo86,
+} from "../assets/assets";
 
 const GallerySection = () => {
-  const images = [
-    Related1,
-    Related1,
-    Related1,
-    Related1,
-    Related1,
-    Related1,
-  ]; // Replace with your actual image paths
+  const images = [Photo86, Photo75, Photo84, Photo16, Photo2, Photo60];
 
   return (
     <div className="bg-white py-16 px-4 text-center">
