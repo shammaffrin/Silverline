@@ -66,7 +66,14 @@ import Rollers from "./productss/ROLLER.png";
 import Telehandler from "./productss/TELEHANDLER.png";
 import WheelLoader from "./productss/WHEEL LOADER.png";
 import Cummins from "./productss/CUMMINS.png";
+import FGWilson from "./productss/fgwilson.png";
+import AirmanGenerator from "./productss/AirmanGen.png";
 import Denyo from "./productss/DENYO.png";
+import JET from "./productss/JET.png";
+import Gesan from "./productss/gesan.png";
+import AGG from "./productss/AGG.png";
+import Generac from "./productss/Generac.png";
+import PISILVER from "./productss/PIsilver.png";
 import CAT from "./productss/CAT.png";
 import Vibrators from "./productss/VIBRATOR.png";
 import VacuumCleaners from "./productss/VACCUM.png";
@@ -81,8 +88,16 @@ import CoreCutters from "./productss/CORE CUTTERS.png";
 import ConcreteMixers from "./productss/CONCRETE MIXERS.png";
 import AsphaltCutters from "./productss/ASPHALT CUTTERS.png";
 import Miller from "./productss/MILLER.png";
+import Generator from "./productss/Generator.webp";
 
 import Teamimg from "./career1.jpg";
+
+import ESAB from "./productss/ESAB.png";
+import BOSS from "./productss/BOSS.png";
+import TELWIN from "./productss/TELWIN.png";
+import ELECTREX from "./productss/ELECTREX.png";
+import PowerFloat from "./productss/PowerFloat.png";
+import SAW from "./productss/SAW.png";
 
 import ADNOC from "./adnoc.png";
 import ENOC from "./ENOC.svg";
@@ -105,8 +120,13 @@ import CabinsVec from "./Shower.svg"
 import HeavyMachineryVec from "./Excavator.svg"
 
 
+import Ablusion from "./productss/Ablusion.png";
+import Cabin from "./productss/Cabin.png";
+
+
 export {
   Logo,
+  Generator,
   Avatar,
   LogoNew,
   Herobg1,
@@ -171,7 +191,14 @@ export {
   Rollers,
   Telehandler,
   Cummins,
+  AirmanGenerator,
   Denyo,
+  FGWilson,
+  AGG,
+  Generac,
+  PISILVER,
+  JET,
+  Gesan,
   CAT,
   WheelLoader,
   Vibrators,
@@ -205,5 +232,14 @@ export {
   AirCompressorVec,
   ConcreteMixerVec,
   CabinsVec,
-  HeavyMachineryVec, 
+  HeavyMachineryVec,
+  
+  ESAB,
+  BOSS,
+  TELWIN,
+  ELECTREX,
+  PowerFloat,
+  SAW,
+  Ablusion,
+  Cabin,
 };

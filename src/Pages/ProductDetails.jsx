@@ -1,10 +1,12 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import categoriesData from "../Data/productData";
 import Navbar from "../Components/Navbar";
 
 const ProductDetails = () => {
   const { category, sub, index } = useParams();
+  const navigate = useNavigate();
+
   const itemIndex = parseInt(index, 10);
 
   const categoryData = categoriesData[category];
@@ -18,21 +20,37 @@ const ProductDetails = () => {
   const product = subData[itemIndex];
   if (!product) return <p className="p-10 text-red-600">Product not found.</p>;
 
-  const allProducts = Object.keys(categoryData.data).flatMap((subKey) =>
-    categoryData.data[subKey].map((item, i) => ({
-      sub: subKey,
-      item,
-      index: i,
-    }))
-  );
+  // ================= ALL PRODUCTS (FROM ALL CATEGORIES) =================
+  const allProducts = [];
 
+  Object.keys(categoriesData).forEach((cat) => {
+    Object.keys(categoriesData[cat].data).forEach((subKey) => {
+      categoriesData[cat].data[subKey].forEach((item, idx) => {
+        // ✅ ONLY include products WITH image
+        if (item.image) {
+          allProducts.push({
+            category: cat,
+            sub: subKey,
+            item,
+            index: idx,
+          });
+        }
+      });
+    });
+  });
+
+  // ================= RELATED PRODUCTS =================
   const relatedProducts = allProducts
-    .filter((p) => !(p.sub === sub && p.index === itemIndex))
-    .slice(0, 4);
+    .filter(
+      (p) =>
+        !(p.category === category && p.sub === sub && p.index === itemIndex),
+    )
+    .sort(() => 0.5 - Math.random()) // 🔀 shuffle
+    .slice(0, 4); // limit
 
-  const whatsappNumber = "+971501406565"; // <-- Change this
+  const whatsappNumber = "+971501406565";
   const whatsappMsg = `Hello, I'm interested in the product: ${
-    product.brand 
+    product.brand || sub
   }`;
 
   return (
@@ -48,11 +66,13 @@ const ProductDetails = () => {
         <div className="flex flex-col md:flex-row gap-8 md:gap-10">
           {/* Image */}
           <div className="w-full md:w-1/2">
-            <img
-              src={product.image}
-              alt={product.brand || product.capacity}
-              className="w-full h-64 md:h-[350px] object-contain rounded-lg bg-white shadow"
-            />
+            {product.image && (
+              <img
+                src={product.image}
+                alt={product.brand || product.capacity}
+                className="w-full h-64 md:h-[350px] object-contain rounded-lg bg-white shadow"
+              />
+            )}
           </div>
 
           {/* Details */}
@@ -72,10 +92,10 @@ const ProductDetails = () => {
               ))}
             </ul>
 
-            {/* Contact Sales Button */}
+            {/* Contact Sales */}
             <a
               href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-                whatsappMsg
+                whatsappMsg,
               )}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -86,29 +106,34 @@ const ProductDetails = () => {
           </div>
         </div>
 
-        {/* Related Products */}
+        {/* ================= RELATED PRODUCTS ================= */}
         <div className="mt-16">
           <h3 className="text-xl font-bold mb-4">Related Products</h3>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
             {relatedProducts.map((rp, i) => (
-              <div key={i} className="p-3 md:p-4 bg-white shadow rounded">
+              <div
+                key={i}
+                className="p-3 md:p-4 bg-white shadow rounded cursor-pointer hover:shadow-lg transition"
+                onClick={() =>
+                  navigate(`/product/${rp.category}/${rp.sub}/${rp.index}`)
+                }
+              >
                 <img
                   src={rp.item.image}
                   alt=""
                   className="w-full h-20 md:h-24 object-contain mb-2"
                 />
                 <p className="text-xs md:text-sm font-medium">
-                  {rp.item.brand || rp.item.capacity}
+                  {rp.item.brand || rp.sub}
                 </p>
                 <p className="text-[10px] md:text-xs text-gray-500">
-                  {rp.sub}
+                  {rp.category}
                 </p>
               </div>
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );

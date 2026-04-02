@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import categoriesData from "../Data/productData";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const ProductHero = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -10,11 +10,29 @@ const ProductHero = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   const categories = Object.keys(categoriesData);
   const selectedData = selectedCategory
     ? categoriesData[selectedCategory]
     : null;
+
+  // ✅ GET CATEGORY FROM URL
+  const categoryFromURL = searchParams.get("category");
+
+  // ✅ APPLY CATEGORY FROM URL ON LOAD
+  useEffect(() => {
+    if (categoryFromURL && categoriesData[categoryFromURL]) {
+      setSelectedCategory(categoryFromURL);
+      setSelectedRange(null);
+      setSelectedSub(null);
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, [categoryFromURL]);
 
   // ================= GLOBAL SEARCH =================
   const globalResults = [];
@@ -41,6 +59,14 @@ const ProductHero = () => {
 
   const showGlobal = searchQuery.trim().length > 0;
 
+  // ✅ SCROLL TO TOP HELPER
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div>
       <Navbar />
@@ -64,18 +90,22 @@ const ProductHero = () => {
                   {/* CATEGORY */}
                   <div
                     className={`cursor-pointer hover:bg-gray-300 text-sm pb-1 px-2 rounded ${
-                      selectedCategory === cat ? "font-bold py-1 bg-gray-200" : ""
+                      selectedCategory === cat
+                        ? "font-bold py-1 bg-gray-200"
+                        : ""
                     }`}
                     onClick={() => {
                       setSelectedCategory(cat);
-                      setSelectedRange(null); // 👈 reset so sidebar stays closed
+                      setSelectedRange(null);
                       setSelectedSub(null);
+
+                      scrollToTop(); // ✅ scroll fix
                     }}
                   >
                     {cat}
                   </div>
 
-                  {/* RANGE DROPDOWN (ONLY AFTER RANGE SELECTED) */}
+                  {/* RANGE DROPDOWN */}
                   {selectedCategory === cat &&
                     selectedData?.type === "Capacity" &&
                     selectedData?.ranges &&
@@ -90,6 +120,8 @@ const ProductHero = () => {
                             onClick={() => {
                               setSelectedRange(range);
                               setSelectedSub(null);
+
+                              scrollToTop(); // ✅ scroll fix
                             }}
                           >
                             {range}
@@ -121,10 +153,12 @@ const ProductHero = () => {
                       )
                     }
                   >
-                    <img
-                      src={item.image}
-                      className="h-32 w-full object-contain"
-                    />
+                    {item.image && (
+                      <img
+                        src={item.image}
+                        className="h-32 w-full object-contain"
+                      />
+                    )}
                     <p className="text-center mt-2">
                       {item.brand || item.capacity}
                     </p>
@@ -146,80 +180,125 @@ const ProductHero = () => {
             selectedCategory &&
             selectedData?.type === "Brand" && (
               <div className="grid grid-cols-3 gap-6">
-                {Object.keys(selectedData.data).map((brand) => (
-                  <div
-                    key={brand}
-                    className="p-4 bg-white rounded shadow text-center cursor-pointer"
-                    onClick={() =>
-                      navigate(`/product/${selectedCategory}/${brand}/0`)
-                    }
-                  >
-                    <img
-                      src={selectedData.data[brand][0].image}
-                      className="h-24 mx-auto"
-                    />
-                    <p className="mt-2">{brand}</p>
-                  </div>
-                ))}
+                {Object.keys(selectedData.data).map((brand) => {
+                  const firstItemWithImage = selectedData.data[brand]?.find(
+                    (i) => i.image,
+                  );
+
+                  if (!firstItemWithImage) return null;
+
+                  return (
+                    <div
+                      key={brand}
+                      className="p-4 bg-white rounded shadow text-center cursor-pointer"
+                      onClick={() => {
+                        scrollToTop();
+                        navigate(`/product/${selectedCategory}/${brand}/0`);
+                      }}
+                    >
+                      <img
+                        src={firstItemWithImage.image}
+                        className="h-24 mx-auto"
+                      />
+                      <p className="mt-2">{brand}</p>
+                    </div>
+                  );
+                })}
               </div>
             )}
 
-          {/* ===== CAPACITY TYPE ===== */}
+          {/* ===== CAPACITY TYPE (unchanged logic, only added scroll) */}
           {!showGlobal &&
             selectedCategory &&
             selectedData?.type === "Capacity" && (
               <>
-                {/* STEP 1: RANGES */}
-                {!selectedRange && (
-                  <div className="grid grid-cols-3 gap-6">
-                    {Object.entries(selectedData.ranges).map(
-                      ([range, value]) => (
-                        <div
-                          key={range}
-                          onClick={() => {
-                            setSelectedRange(range); // 👈 triggers sidebar dropdown
-                            setSelectedSub(null);
-                          }}
-                          className="p-6 bg-white rounded shadow cursor-pointer text-center"
-                        >
-                          <img src={value.image} className="h-24 mx-auto" />
-                          <p className="mt-2 font-semibold">{range}</p>
-                        </div>
-                      ),
+                {selectedData?.ranges ? (
+                  <>
+                    {!selectedRange && (
+                      <div className="grid grid-cols-3 gap-6">
+                        {Object.entries(selectedData.ranges).map(
+                          ([range, value]) => (
+                            <div
+                              key={range}
+                              onClick={() => {
+                                setSelectedRange(range);
+                                setSelectedSub(null);
+                                scrollToTop();
+                              }}
+                              className="p-6 bg-white rounded shadow cursor-pointer text-center"
+                            >
+                              <img src={value.image} className="h-24 mx-auto" />
+                              <p className="mt-2 font-semibold">{range}</p>
+                            </div>
+                          ),
+                        )}
+                      </div>
                     )}
-                  </div>
-                )}
 
-                {/* STEP 2: CAPACITIES */}
-                {selectedRange && !selectedSub && (
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    {selectedData.ranges[selectedRange].capacities.map(
-                      (cap) => {
-                        const firstItem = selectedData.data[cap]?.[0];
+                    {selectedRange && !selectedSub && (
+                      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                        {selectedData.ranges[selectedRange].capacities
+                          .filter((cap) =>
+                            selectedData.data[cap]?.some((item) => item.image),
+                          )
+                          .map((cap) => {
+                            const firstItemWithImage = selectedData.data[
+                              cap
+                            ]?.find((item) => item.image);
 
-                        return (
-                          <div
-                            key={cap}
-                            onClick={() => setSelectedSub(cap)}
-                            className="p-4 bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer text-center"
-                          >
-                            {firstItem && (
+                            return (
+                              <div
+                                key={cap}
+                                onClick={() => {
+                                  setSelectedSub(cap);
+                                  scrollToTop();
+                                }}
+                                className="p-4 bg-white rounded-xl shadow cursor-pointer text-center"
+                              >
+                                <img
+                                  src={firstItemWithImage.image}
+                                  className="h-24 mx-auto object-contain mb-2"
+                                />
+                                <p className="font-semibold">{cap}</p>
+                              </div>
+                            );
+                          })}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  !selectedSub && (
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                      {Object.keys(selectedData.data)
+                        .filter((cap) =>
+                          selectedData.data[cap]?.some((item) => item.image),
+                        )
+                        .map((cap) => {
+                          const firstItemWithImage = selectedData.data[
+                            cap
+                          ]?.find((item) => item.image);
+
+                          return (
+                            <div
+                              key={cap}
+                              onClick={() => {
+                                setSelectedSub(cap);
+                                scrollToTop();
+                              }}
+                              className="p-4 bg-white rounded-xl shadow cursor-pointer text-center"
+                            >
                               <img
-                                src={firstItem.image}
-                                alt={cap}
+                                src={firstItemWithImage.image}
                                 className="h-24 mx-auto object-contain mb-2"
                               />
-                            )}
-
-                            <p className="font-semibold">{cap}</p>
-                          </div>
-                        );
-                      },
-                    )}
-                  </div>
+                              <p className="font-semibold">{cap}</p>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  )
                 )}
 
-                {/* STEP 3: PRODUCTS */}
                 {selectedSub && (
                   <div>
                     <h3 className="mb-4 text-xl">{selectedSub}</h3>
@@ -229,13 +308,16 @@ const ProductHero = () => {
                         <div
                           key={idx}
                           className="p-4 bg-white rounded shadow cursor-pointer text-center"
-                          onClick={() =>
+                          onClick={() => {
+                            scrollToTop();
                             navigate(
                               `/product/${selectedCategory}/${selectedSub}/${idx}`,
-                            )
-                          }
+                            );
+                          }}
                         >
-                          <img src={item.image} className="h-24 mx-auto" />
+                          {item.image && (
+                            <img src={item.image} className="h-24 mx-auto" />
+                          )}
                           <p className="mt-2">{item.brand}</p>
                         </div>
                       ))}
@@ -261,7 +343,9 @@ const ProductHero = () => {
           <div className="grid grid-cols-2 gap-4">
             {globalResults.map((item, i) => (
               <div key={i} className="p-3 bg-white rounded shadow text-center">
-                <img src={item.image} className="h-20 mx-auto" />
+                {item.image && (
+                  <img src={item.image} className="h-20 mx-auto" />
+                )}
                 <p>{item.brand || item.capacity}</p>
               </div>
             ))}

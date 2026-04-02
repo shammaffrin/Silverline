@@ -12,14 +12,42 @@ import {
 } from "../assets";
 
 const categories = [
-  { title: "Diesel Generators", image: GeneratorsVec },
-  { title: "Air Compressors", image: AirCompressorVec },
-  { title: "Tower Lights", image: TowerLightVec },
-  { title: "Welding Machines", image: WeldingMachineVec },
-  { title: "Concrete Mixers", image: ConcreteMixerVec },
-  { title: "Small Machines", image: SmallMachinesVec },
-  { title: "Cabins", image: CabinsVec },
-  { title: "Heavy Machinery", image: HeavyMachineryVec },
+  { title: "Generators", image: GeneratorsVec, categoryValue: "Generators" },
+  {
+    title: "Air Compressors",
+    image: AirCompressorVec,
+    categoryValue: "Air Compressors",
+  },
+  {
+    title: "TowerLights",
+    image: TowerLightVec,
+    categoryValue: "TowerLights",
+  },
+  {
+    title: "Welding Machines",
+    image: WeldingMachineVec,
+    categoryValue: "Electrical Welding Machines",
+  },
+  {
+    title: "Concrete Mixers",
+    image: ConcreteMixerVec,
+    categoryValue: "Concrete Mixers",
+  },
+  {
+    title: "Small Machines",
+    image: SmallMachinesVec,
+    categoryValue: "Vaccum Cleaner",
+  },
+  {
+    title: "Security Cabin",
+    image: CabinsVec,
+    categoryValue: "Security Cabin",
+  },
+  {
+    title: "Heavy Machinery",
+    image: HeavyMachineryVec,
+    categoryValue: "Excavator", // ✅ changed
+  },
 ];
 
 const CategoryGrid = () => {
@@ -31,21 +59,12 @@ const CategoryGrid = () => {
         </h2>
       </div>
 
-      {/* MOBILE = GRID | DESKTOP = FLEX */}
-      <div
-        className="
-          grid grid-cols-2 gap-6 p-6   
-          sm:flex sm:flex-wrap sm:justify-center sm:gap-8 sm:p-10
-        "
-      >
+      <div className="grid grid-cols-2 gap-6 p-6 sm:flex sm:flex-wrap sm:justify-center sm:gap-8 sm:p-10">
         {categories.map((item, index) => (
           <Link
-            to={`/products?category=${encodeURIComponent(item.title)}`}
             key={index}
-            className="
-              flex flex-col items-center cursor-pointer
-              sm:w-[30%] lg:w-[22%]       /* Desktop sizing remains same */
-            "
+            to={`/products?category=${encodeURIComponent(item.categoryValue)}`}
+            className="flex flex-col items-center cursor-pointer sm:w-[30%] lg:w-[22%]"
           >
             <div className="flex items-center justify-center overflow-hidden">
               <img

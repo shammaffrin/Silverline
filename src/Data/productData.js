@@ -1,17 +1,38 @@
 import {
+  Ablusion,
+  AGG,
   Airman1550,
   Airman185,
+  AirmanGenerator,
   AsphaltCutters,
   BackhoeLoader,
+  BOSS,
+  Cabin,
   ConcreteMixers,
   CoreCutters,
   Cummins,
   Denyo,
+  ELECTREX,
+  ESAB,
   Excavator,
+  FGWilson,
   Forklift,
+  Generac,
+  Generator,
+  Gesan,
   JackHammers,
+  JET,
   Komatsu,
+  PISILVER,
+  PlateCompactors,
+  PowerFloat,
+  RollerCompactors,
+  Rollers,
+  SAW,
+  Telehandler,
+  TELWIN,
   TowerLight,
+  VacuumCleaners,
   WheelLoader,
 } from "../assets";
 
@@ -24,91 +45,62 @@ const categoriesData = {
 
     ranges: {
       "0-100 KVA": {
-        image: Airman185,
+        image: Denyo,
         capacities: [
-          "5.5 KVA",
-          "6 KVA",
-          "6.5 KVA",
+          "5 KVA",
           "10 KVA",
-          "12.5 KVA",
-          "13 KVA",
           "15 KVA",
-          "20 KVA",
           "25 KVA",
-          "30 KVA",
           "35 KVA",
+          "40 KVA",
           "45 KVA",
-          "50 KVA",
-          "60 KVA",
-          "62.5 KVA",
           "65 KVA",
-          "70 KVA",
           "75 KVA",
-          "80 KVA",
-          "100 KVA",
         ],
       },
 
       "100-250 KVA": {
-        image: Airman185,
-        capacities: [
-          "110 KVA",
-          "125 KVA",
-          "135 KVA",
-          "150 KVA",
-          "160 KVA",
-          "200 KVA",
-          "220 KVA",
-          "230 KVA",
-        ],
+        image: AGG,
+        capacities: ["100 KVA", "125 KVA", "150 KVA", "200 KVA"],
       },
 
       "250-650 KVA": {
-        image: Airman185,
-        capacities: [
-          "250 KVA",
-          "275 KVA",
-          "300 KVA",
-          "320 KVA",
-          "350 KVA",
-          "400 KVA",
-          "450 KVA",
-          "500 KVA",
-          "600 KVA",
-        ],
+        image: Generac,
+        capacities: ["250 KVA", "300 KVA", "400 KVA", "500 KVA"],
       },
 
       "650-1500 KVA": {
-        image: Airman185,
-        capacities: ["650 KVA", "770 KVA", "800 KVA", "1100 KVA", "1400 KVA"],
+        image: PISILVER,
+        capacities: ["650 KVA", "800 KVA", "1100 KVA", "1400 KVA"],
       },
     },
 
     data: {
-      "5.5 KVA": [{ brand: "Honda", image: Airman185 }],
+      "5 KVA": [{ brand: "Denyo", image: Denyo }],
+      "5.5 KVA": [{ brand: "Honda" }],
 
       "6 KVA": [
-        { brand: "Demin", image: Airman185 },
-        { brand: "Denyo", image: Airman185 },
-        { brand: "Easy Power", image: Airman185 },
-        { brand: "Ford", image: Airman185 },
-        { brand: "Hi-Earns", image: Airman185 },
-        { brand: "Honda", image: Airman185 },
-        { brand: "Lutian", image: Airman185 },
-        { brand: "Powerobib", image: Airman185 },
-        { brand: "Rato", image: Airman185 },
-        { brand: "Robin", image: Airman185 },
-        { brand: "Strongmax", image: Airman185 },
-        { brand: "Vackson", image: Airman185 },
-        { brand: "Yanmar", image: Airman185 },
+        { brand: "Demin" },
+        { brand: "Denyo" },
+        { brand: "Easy Power" },
+        { brand: "Ford" },
+        { brand: "Hi-Earns" },
+        { brand: "Honda" },
+        { brand: "Lutian" },
+        { brand: "Powerobib" },
+        { brand: "Rato" },
+        { brand: "Robin" },
+        { brand: "Strongmax" },
+        { brand: "Vackson" },
+        { brand: "Yanmar" },
       ],
 
-      "6.5 KVA": [{ brand: "Denyo", image: Airman185 }],
+      "6.5 KVA": [{ brand: "Denyo", image: Denyo }],
 
       "10 KVA": [
-        { brand: "Airman", image: Airman185 },
         { brand: "Denyo", image: Denyo },
-        { brand: "FG Wilson", image: Cummins },
+        { brand: "Airman", image: AirmanGenerator },
+        { brand: "FG Wilson", image: FGWilson },
       ],
 
       "12.5 KVA": [{ brand: "JET", image: Airman185 }],
@@ -119,7 +111,10 @@ const categoriesData = {
         { brand: "JET", image: Cummins },
       ],
 
-      "15 KVA": [{ brand: "Denyo", image: Denyo }],
+      "15 KVA": [
+        { brand: "Airman", image: AirmanGenerator },
+        { brand: "Denyo", image: Denyo },
+      ],
 
       "20 KVA": [
         { brand: "Airman", image: Airman185 },
@@ -129,8 +124,9 @@ const categoriesData = {
       ],
 
       "25 KVA": [
-        { brand: "Denyo", image: Airman185 },
-        { brand: "JET", image: Airman185 },
+        { brand: "Airman", image: AirmanGenerator },
+        { brand: "Denyo", image: Denyo },
+        { brand: "JET", image: JET },
       ],
 
       "30 KVA": [
@@ -144,16 +140,15 @@ const categoriesData = {
       ],
 
       "35 KVA": [
-        { brand: "Denyo", image: Airman185 },
-        { brand: "Gesan", image: Airman185 },
+        { brand: "Denyo", image: Denyo },
+        { brand: "Gesan", image: Gesan },
       ],
+      "40 KVA": [{ brand: "Denyo", image: Denyo }],
 
       "45 KVA": [
-        { brand: "Airman", image: Airman185 },
-        { brand: "Denyo", image: Airman185 },
-        { brand: "FG Wilson", image: Airman185 },
-        { brand: "JET", image: Airman185 },
-        { brand: "Paikane", image: Airman185 },
+        { brand: "Airman", image: AirmanGenerator },
+        { brand: "FG Wilson", image: FGWilson },
+        { brand: "JET", image: JET },
       ],
 
       "50 KVA": [{ brand: "Airman", image: Airman185 }],
@@ -174,59 +169,61 @@ const categoriesData = {
       ],
 
       "65 KVA": [
-        { brand: "FG Wilson", image: Airman185 },
-        { brand: "Gesan", image: Airman185 },
-        { brand: "JET", image: Airman185 },
-        { brand: "Khonaysser", image: Airman185 },
+        { brand: "Airman", image: AirmanGenerator },
+        { brand: "FG Wilson", image: FGWilson },
+        { brand: "Gesan", image: Gesan },
+        { brand: "JET", image: JET },
+        { brand: "Khonaysser", image: Generator },
       ],
 
       "70 KVA": [{ brand: "BW International", image: Airman185 }],
-      "75 KVA": [{ brand: "Denyo", image: Airman185 }],
+      "75 KVA": [{ brand: "Denyo", image: Denyo }],
       "80 KVA": [{ brand: "JET", image: Airman185 }],
 
       "100 KVA": [
-        { brand: "Airman", image: Airman185 },
-        { brand: "BW International", image: Denyo },
+        { brand: "Airman", image: AirmanGenerator },
+        { brand: "BW International", image: Generator },
         { brand: "Denyo", image: Denyo },
-        { brand: "FG Wilson", image: Cummins },
-        { brand: "Gesan", image: Cummins },
-        { brand: "JET", image: Cummins },
-        { brand: "Kirloskar", image: Cummins },
-        { brand: "Weber", image: Cummins },
+        { brand: "FG Wilson", image: FGWilson },
+        { brand: "Gesan", image: Gesan },
+        { brand: "JET", image: JET },
+        { brand: "Kirloskar", image: Generator },
+        { brand: "Weber", image: Generator },
       ],
 
-      "110 KVA": [{ brand: "FG Wilson", image: Airman185 }],
+      "110 KVA": [{ brand: "FG Wilson", image: FGWilson }],
 
       "125 KVA": [
-        { brand: "Airman", image: Airman185 },
-        { brand: "BW International", image: Denyo },
         { brand: "Denyo", image: Denyo },
+        { brand: "Airman", image: AirmanGenerator },
+        { brand: "BW International", image: Denyo },
       ],
 
-      "135 KVA": [{ brand: "JET", image: Airman185 }],
+      "135 KVA": [{ brand: "JET", image: JET }],
 
       "150 KVA": [
-        { brand: "Airman", image: Denyo },
-        { brand: "BW International", image: Airman185 },
-        { brand: "Dagartech", image: Airman185 },
-        { brand: "Denyo", image: Airman185 },
-        { brand: "FG Wilson", image: Airman185 },
-        { brand: "Gesan", image: Airman185 },
-        { brand: "Inmesol", image: Airman185 },
-        { brand: "JET", image: Airman185 },
-        { brand: "Kirloskar", image: Airman185 },
-        { brand: "Weber", image: Airman185 },
+        { brand: "Airman", image: AirmanGenerator },
+        { brand: "BW International", image: Generator },
+        { brand: "Dagartech", image: Generator },
+        { brand: "Denyo", image: Denyo },
+        { brand: "FG Wilson", image: FGWilson },
+        { brand: "Gesan", image: Gesan },
+        { brand: "Inmesol", image: Generator },
+        { brand: "JET", image: JET },
+        { brand: "Kirloskar", image: Generator },
+        { brand: "Weber", image: Generator },
       ],
 
       "160 KVA": [{ brand: "Airman", image: Airman185 }],
 
       "200 KVA": [
-        { brand: "Airman", image: Airman185 },
-        { brand: "Denyo", image: Airman185 },
-        { brand: "Inmesol", image: Airman185 },
-        { brand: "JET", image: Airman185 },
-        { brand: "Kirloskar", image: Airman185 },
-        { brand: "Weber", image: Airman185 },
+        { brand: "AGG", image: AGG },
+        { brand: "Airman", image: AirmanGenerator },
+        { brand: "Denyo", image: Denyo },
+        { brand: "Inmesol", image: Generator },
+        { brand: "JET", image: JET },
+        { brand: "Kirloskar", image: Generator },
+        { brand: "Weber", image: Generator },
       ],
 
       "220 KVA": [
@@ -243,23 +240,25 @@ const categoriesData = {
       ],
 
       "250 KVA": [
-        { brand: "Caterpillar", image: Airman185 },
-        { brand: "Dagartech", image: Airman185 },
-        { brand: "Exigen", image: Airman185 },
-        { brand: "Generac", image: Airman185 },
-        { brand: "Inmesol", image: Airman185 },
-        { brand: "JET", image: Airman185 },
-        { brand: "Khonaysser", image: Airman185 },
-        { brand: "Kirloskar", image: Airman185 },
-        { brand: "Weber", image: Airman185 },
+        { brand: "AGG", image: AGG },
+        { brand: "Caterpillar", image: Generator },
+        { brand: "Dagartech", image: Generator },
+        { brand: "Exigen", image: Generator },
+        { brand: "Generac", image: Generac },
+        { brand: "Inmesol", image: Generator },
+        { brand: "JET", image: JET },
+        { brand: "Khonaysser", image: Generator },
+        { brand: "Kirloskar", image: Generator },
+        { brand: "Weber", image: Generator },
       ],
 
       "275 KVA": [{ brand: "GES", image: Airman185 }],
 
       "300 KVA": [
-        { brand: "Airman", image: Airman185 },
-        { brand: "Denyo", image: Airman185 },
-        { brand: "JET", image: Airman185 },
+        { brand: "Generac", image: Generac },
+        { brand: "Airman", image: AirmanGenerator },
+        { brand: "Denyo", image: Denyo },
+        { brand: "JET", image: JET },
       ],
 
       "320 KVA": [{ brand: "Weber", image: Airman185 }],
@@ -275,11 +274,11 @@ const categoriesData = {
       ],
 
       "400 KVA": [
-        { brand: "Dagartech", image: Airman185 },
-        { brand: "Denyo", image: Airman185 },
-        { brand: "JET", image: Airman185 },
-        { brand: "Marapco", image: Airman185 },
-        { brand: "Weber", image: Airman185 },
+        { brand: "Denyo", image: Denyo },
+        { brand: "Dagartech", image: Generator },
+        { brand: "JET", image: JET },
+        { brand: "Marapco", image: Generator },
+        { brand: "Weber", image: Generator },
       ],
 
       "450 KVA": [
@@ -288,31 +287,33 @@ const categoriesData = {
       ],
 
       "500 KVA": [
-        { brand: "Airman", image: Airman185 },
-        { brand: "Dagartech", image: Airman185 },
-        { brand: "Denyo", image: Airman185 },
-        { brand: "Exigen", image: Airman185 },
-        { brand: "FG Wilson", image: Airman185 },
-        { brand: "JET", image: Airman185 },
-        { brand: "Khonaysser", image: Airman185 },
-        { brand: "Komatsu", image: Airman185 },
-        { brand: "Weber", image: Airman185 },
+        { brand: "AGG", image: AGG },
+        { brand: "Dagartech", image: Generator },
+        { brand: "Denyo", image: Denyo },
+        { brand: "Exigen", image: Generator },
+        { brand: "FG Wilson", image: FGWilson },
+        { brand: "JET", image: JET },
+        { brand: "Khonaysser", image: Generator },
+        { brand: "Komatsu", image: Generator },
+        { brand: "Weber", image: Generator },
       ],
 
       "600 KVA": [{ brand: "JET", image: Airman185 }],
 
       "650 KVA": [
-        { brand: "FG Wilson", image: Airman185 },
-        { brand: "JET", image: Airman185 },
-        { brand: "Komatsu", image: Airman185 },
+        { brand: "JET", image: JET },
+        { brand: "FG Wilson", image: FGWilson },
+        { brand: "Komatsu", image: Generator },
       ],
 
       "770 KVA": [{ brand: "Caterpillar", image: Airman185 }],
 
-      "800 KVA": [{ brand: "Weber", image: Airman185 }],
+      "800 KVA": [
+        { brand: "AGG", image: AGG },
+        { brand: "Weber", image: Generator }],
 
-      "1100 KVA": [{ brand: "Komatsu", image: Airman185 }],
-      "1400 KVA": [{ brand: "Komatsu", image: Airman185 }],
+      "1100 KVA": [{ brand: "PI Silverline", image: PISILVER }],
+      "1400 KVA": [{ brand: "AGG", image: AGG }],
     },
   },
   "Air Compressors": {
@@ -413,45 +414,45 @@ const categoriesData = {
       "Durable and powerful tower lights available in multiple watt capacities from leading brands.",
     data: {
       ARBOR: [
-        { capacity: "1000 WATT", image: Cummins },
-        { capacity: "300 WATT", image: Cummins },
-        { capacity: "320 WATT", image: Cummins },
+        { capacity: "1000 WATT", image: TowerLight },
+        { capacity: "300 WATT", image: TowerLight },
+        { capacity: "320 WATT", image: TowerLight },
       ],
-      "ATLAS COPCO": [{ capacity: "1000 WATT", image: Cummins }],
+      "ATLAS COPCO": [{ capacity: "1000 WATT", image: TowerLight }],
       "CHICAGO PNEUMATIC": [
-        { capacity: "1000 WATT", image: Cummins },
-        { capacity: "320 WATT", image: Cummins },
+        { capacity: "1000 WATT", image: TowerLight },
+        { capacity: "320 WATT", image: TowerLight },
       ],
       GENERAC: [
-        { capacity: "1000 WATT", image: Cummins },
-        { capacity: "320 WATT", image: Cummins },
+        { capacity: "1000 WATT", image: TowerLight },
+        { capacity: "320 WATT", image: TowerLight },
       ],
       PRAMAC: [
-        { capacity: "1000 WATT", image: Cummins },
-        { capacity: "300 WATT", image: Cummins },
-        { capacity: "320 WATT", image: Cummins },
+        { capacity: "1000 WATT", image: TowerLight },
+        { capacity: "300 WATT", image: TowerLight },
+        { capacity: "320 WATT", image: TowerLight },
       ],
-      "TRIME XSTART": [{ capacity: "150 WATT", image: Cummins }],
+      "TRIME XSTART": [{ capacity: "150 WATT", image: TowerLight }],
       "WACKER NEUSON": [
-        { capacity: "320 WATT", image: Cummins },
-        { capacity: "400 WATT", image: Cummins },
+        { capacity: "320 WATT", image: TowerLight },
+        { capacity: "400 WATT", image: TowerLight },
       ],
     },
   },
   "Electrical Welding Machines": {
-    type: "Capacity",
+    type: "Brand",
     description:
       " Heavy-duty electrical welding machines with different ampere capacities from top brands.",
     data: {
       ESAB: [
-        { capacity: "200 AMPS", image: TowerLight },
-        { capacity: "410 AMPS", image: TowerLight },
+        { capacity: "200 AMPS", image: ESAB },
+        { capacity: "410 AMPS", image: ESAB },
       ],
-      BOSS: [{ capacity: "400 AMPS", image: TowerLight }],
+      BOSS: [{ capacity: "400 AMPS", image: BOSS }],
       TELWIN: [
-        { capacity: "410 AMPS", image: TowerLight },
-        { capacity: "500 AMPS", image: TowerLight },
-        { capacity: "530 AMPS", image: TowerLight },
+        { capacity: "410 AMPS", image: TELWIN },
+        { capacity: "500 AMPS", image: TELWIN },
+        { capacity: "530 AMPS", image: TELWIN },
       ],
     },
   },
@@ -460,7 +461,7 @@ const categoriesData = {
     description:
       "MIG welding machines with stable performance, designed for industrial use.",
     data: {
-      ELECTREX: [{ capacity: "400 VOLTAGE", image: TowerLight }],
+      ELECTREX: [{ capacity: "400 VOLTAGE", image: ELECTREX }],
     },
   },
 
@@ -469,7 +470,7 @@ const categoriesData = {
     description:
       "TIG welding machines for precision welding with durable performance.",
     data: {
-      ESAB: [{ capacity: "300 AMPS", image: TowerLight }],
+      ESAB: [{ capacity: "300 AMPS", image: ESAB }],
     },
   },
   "Roller Compactors": {
@@ -477,24 +478,24 @@ const categoriesData = {
     description:
       "Heavy-duty roller compactors available in different ton capacities from leading brands.",
     data: {
-      "10 TON": [{ brand: "BOMAG", image: TowerLight }],
+      "10 TON": [{ brand: "BOMAG", image: RollerCompactors }],
       "2 TON": [
-        { brand: "AMMANN", image: TowerLight },
-        { brand: "ATLAS COPCO", image: TowerLight },
-        { brand: "BELLE", image: TowerLight },
-        { brand: "CHICAGO PNEUMATIC", image: TowerLight },
-        { brand: "HUSQVARNA", image: TowerLight },
-        { brand: "MIKASA", image: TowerLight },
-        { brand: "SAKAI", image: TowerLight },
+        { brand: "AMMANN", image: RollerCompactors },
+        { brand: "ATLAS COPCO", image: RollerCompactors },
+        { brand: "BELLE", image: RollerCompactors },
+        { brand: "CHICAGO PNEUMATIC", image: RollerCompactors },
+        { brand: "HUSQVARNA", image: RollerCompactors },
+        { brand: "MIKASA", image: RollerCompactors },
+        { brand: "SAKAI", image: RollerCompactors },
       ],
       "3 TON": [
-        { brand: "ATLAS COPCO", image: TowerLight },
-        { brand: "BELLE", image: TowerLight },
-        { brand: "BOMAG", image: TowerLight },
-        { brand: "MIKASA", image: TowerLight },
-        { brand: "SAKAI", image: TowerLight },
+        { brand: "ATLAS COPCO", image: RollerCompactors },
+        { brand: "BELLE", image: RollerCompactors },
+        { brand: "BOMAG", image: RollerCompactors },
+        { brand: "MIKASA", image: RollerCompactors },
+        { brand: "SAKAI", image: RollerCompactors },
       ],
-      "5 TON": [{ brand: "AMMANN", image: TowerLight }],
+      "5 TON": [{ brand: "AMMANN", image: RollerCompactors }],
     },
   },
   "Reversible Plate Compactors": {
@@ -502,18 +503,18 @@ const categoriesData = {
     description:
       "Durable reversible plate compactors from top brands, available in various weight capacities.",
     data: {
-      BATMATIC: [{ capacity: "150 KG", image: TowerLight }],
+      BATMATIC: [{ capacity: "150 KG", image: PlateCompactors }],
       MIKASA: [
-        { capacity: "150 KG", image: TowerLight },
-        { capacity: "162 KG", image: TowerLight },
-        { capacity: "237 KG", image: TowerLight },
-        { capacity: "238 KG", image: TowerLight },
-        { capacity: "275 KG", image: TowerLight },
-        { capacity: "400 KG", image: TowerLight },
-        { capacity: "450 KG", image: TowerLight },
+        { capacity: "150 KG", image: PlateCompactors },
+        { capacity: "162 KG", image: PlateCompactors },
+        { capacity: "237 KG", image: PlateCompactors },
+        { capacity: "238 KG", image: PlateCompactors },
+        { capacity: "275 KG", image: PlateCompactors },
+        { capacity: "400 KG", image: PlateCompactors },
+        { capacity: "450 KG", image: PlateCompactors },
       ],
-      AMMANN: [{ capacity: "215 KG", image: TowerLight }],
-      "ATLAS COPCO": [{ capacity: "400 KG", image: TowerLight }],
+      AMMANN: [{ capacity: "215 KG", image: PlateCompactors }],
+      "ATLAS COPCO": [{ capacity: "400 KG", image: PlateCompactors }],
     },
   },
   "Forward Plate Compactors": {
@@ -521,8 +522,8 @@ const categoriesData = {
     description:
       "Reliable forward plate compactors from trusted brands, available in 1 ton capacity.",
     data: {
-      MIKASA: [{ capacity: "1 TON", image: TowerLight }],
-      ROBIN: [{ capacity: "1 TON", image: TowerLight }],
+      MIKASA: [{ capacity: "1 TON", image: PlateCompactors }],
+      ROBIN: [{ capacity: "1 TON", image: PlateCompactors }],
     },
   },
   "Power Float": {
@@ -531,18 +532,18 @@ const categoriesData = {
       "High-performance power floats from top brands, available in various KW capacities.",
     data: {
       "ATLAS COPCO": [
-        { capacity: "3.6 KW", image: TowerLight },
-        { capacity: "3.7 KW", image: TowerLight },
+        { capacity: "3.6 KW", image: PowerFloat },
+        { capacity: "3.7 KW", image: PowerFloat },
       ],
       ENERGY: [
-        { capacity: "3.6 KW", image: TowerLight },
-        { capacity: "3.7 KW", image: TowerLight },
-        { capacity: "4.8 KW", image: TowerLight },
-        { capacity: "4.8 KW", image: TowerLight },
+        { capacity: "3.6 KW", image: PowerFloat },
+        { capacity: "3.7 KW", image: PowerFloat },
+        { capacity: "4.8 KW", image: PowerFloat },
+        { capacity: "4.8 KW", image: PowerFloat },
       ],
       BELLE: [
-        { capacity: "4.2 KW", image: TowerLight },
-        { capacity: "5.5 KW", image: TowerLight },
+        { capacity: "4.2 KW", image: PowerFloat },
+        { capacity: "5.5 KW", image: PowerFloat },
       ],
     },
   },
@@ -551,23 +552,23 @@ const categoriesData = {
     description:
       "Durable asphalt cutters from leading brands, available in multiple cutting sizes.",
     data: {
-      ENERGY: [{ capacity: "170 MM", image: TowerLight }],
+      ENERGY: [{ capacity: "170 MM", image: AsphaltCutters }],
       HOPPT: [
-        { capacity: "170 MM", image: TowerLight },
-        { capacity: "170 MM", image: TowerLight },
+        { capacity: "170 MM", image: AsphaltCutters },
+        { capacity: "170 MM", image: AsphaltCutters },
       ],
-      SWIPAC: [{ capacity: "170 MM", image: TowerLight }],
-      "ATLAS COPCO": [{ capacity: "350 MM", image: TowerLight }],
-      KAMA: [{ capacity: "350 MM", image: TowerLight }],
-      MIKASA: [{ capacity: "400 MM", image: TowerLight }],
+      SWIPAC: [{ capacity: "170 MM", image: AsphaltCutters }],
+      "ATLAS COPCO": [{ capacity: "350 MM", image: AsphaltCutters }],
+      KAMA: [{ capacity: "350 MM", image: AsphaltCutters }],
+      MIKASA: [{ capacity: "400 MM", image: AsphaltCutters }],
       BELLE: [
-        { capacity: "440 MM", image: TowerLight },
-        { capacity: "450 MM", image: TowerLight },
+        { capacity: "440 MM", image: AsphaltCutters },
+        { capacity: "450 MM", image: AsphaltCutters },
       ],
-      IMER: [{ capacity: "450 MM", image: TowerLight }],
-      LUTIAN: [{ capacity: "450 MM", image: TowerLight }],
-      YANMAR: [{ capacity: "450 MM", image: TowerLight }],
-      LISSMAC: [{ capacity: "600 MM", image: TowerLight }],
+      IMER: [{ capacity: "450 MM", image: AsphaltCutters }],
+      LUTIAN: [{ capacity: "450 MM", image: AsphaltCutters }],
+      YANMAR: [{ capacity: "450 MM", image: AsphaltCutters }],
+      LISSMAC: [{ capacity: "600 MM", image: AsphaltCutters }],
     },
   },
   "Circular Saw Cutters": {
@@ -575,8 +576,8 @@ const categoriesData = {
     description:
       "High-quality circular saw cutters from trusted brands, available in various cutting sizes.",
     data: {
-      KEYANG: [{ capacity: "7 INCHES", image: TowerLight }],
-      MAKITA: [{ capacity: "7 INCHES", image: TowerLight }],
+      KEYANG: [{ capacity: "7 INCHES", image: SAW }],
+      MAKITA: [{ capacity: "7 INCHES", image: SAW }],
     },
   },
   "Pneumatic Jack Hammers": {
@@ -855,9 +856,9 @@ const categoriesData = {
     description:
       "High-performance vacuum cleaners from leading brands, designed for efficient cleaning in various environments.",
     data: {
-      BLASTRAC: [{ capacity: "40 LTR", image: CoreCutters }],
-      DIAMATIC: [{ capacity: "40 LTR", image: CoreCutters }],
-      TRELAWNY: [{ capacity: "45 LTR", image: CoreCutters }],
+      BLASTRAC: [{ capacity: "40 LTR", image: VacuumCleaners }],
+      DIAMATIC: [{ capacity: "40 LTR", image: VacuumCleaners }],
+      TRELAWNY: [{ capacity: "45 LTR", image: VacuumCleaners }],
     },
   },
   "Security Cabin": {
@@ -865,16 +866,16 @@ const categoriesData = {
     description:
       "Durable cabins and units including security cabins, office cabins, and ablution units, available in multiple sizes.",
     data: {
-      "1.50 MTR": [{ brand: "Security Cabin", image: Airman185 }],
-      "2.4 MTR": [{ brand: "Security Cabin", image: Airman185 }],
-      "3.4 MTR": [{ brand: "Security Cabin", image: Airman185 }],
-      "20 FEET": [{ brand: "Office Cabin", image: ConcreteMixers }],
-      "40 FEET": [{ brand: "Office Cabin", image: ConcreteMixers }],
-      "04 FEET": [{ brand: "Ablution Unit", image: ConcreteMixers }],
-      "08 FEET": [{ brand: "Ablution Unit", image: ConcreteMixers }],
-      "10 FEET": [{ brand: "Ablution Unit", image: ConcreteMixers }],
-      "20 FEET (Ablution)": [{ brand: "Ablution Unit", image: ConcreteMixers }],
-      "40 FEET (Ablution)": [{ brand: "Ablution Unit", image: ConcreteMixers }],
+      "1.50 MTR": [{ brand: "Security Cabin", image: Cabin }],
+      "2.4 MTR": [{ brand: "Security Cabin", image: Cabin }],
+      "3.4 MTR": [{ brand: "Security Cabin", image: Cabin }],
+      "20 FEET": [{ brand: "Office Cabin", image: Cabin }],
+      "40 FEET": [{ brand: "Office Cabin", image: Cabin }],
+      "04 FEET": [{ brand: "Ablution Unit", image: Cabin }],
+      "08 FEET": [{ brand: "Ablution Unit", image: Cabin }],
+      "10 FEET": [{ brand: "Ablution Unit", image: Cabin }],
+      "20 FEET (Ablution)": [{ brand: "Ablution Unit", image: Ablusion }],
+      "40 FEET (Ablution)": [{ brand: "Ablution Unit", image: Ablusion }],
     },
   },
 
@@ -893,7 +894,7 @@ const categoriesData = {
     description:
       "Reliable boom loaders designed for material handling applications.",
     data: {
-      "3 TON": [{ brand: "JCB", image: Komatsu }],
+      "3 TON": [{ brand: "JCB", image: Telehandler }],
     },
   },
 
