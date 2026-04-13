@@ -1,49 +1,33 @@
 import React from "react";
 import Navbar from "./Navbar";
+import LoginNavbar from "./LoginNavbar";
+import { CareerBanner1, Herobg1 } from "../assets";
 
 const OverviewBanner = () => {
-    return (
-        <div className="w-full md:min-h-screen bg-gray-100 relative overflow-hidden">
-            <Navbar />
+  return (
+    <div className="w-full md:min-h-screen bg-gray-100 relative overflow-hidden">
+      <LoginNavbar />
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <img className="h-full object-cover" src={Herobg1} alt="" />
+      </div>
 
-            {/* Subtle Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-                <div className="w-full h-full bg-[radial-gradient(circle_at_center,_#fff_1px,_transparent_1px)] bg-[length:40px_40px]" />
-            </div>
+      {/* Content */}
+      <section className="relative z-10 flex flex-col items-center justify-center text-center min-h-[70vh] sm:min-h-[100vh] px-4 sm:px-6 md:px-12">
+        {/* Main Heading */}
+        <h1 className="text-3xl sm:text-4xl md:text-6xl text-black font-bold uppercase  sm:pt-16">
+          Welcome to Silverline GROUP
+        </h1>
 
-            {/* Content */}
-            <section className="relative z-10 flex flex-col items-center justify-center text-center min-h-[70vh] sm:min-h-[90vh] px-4 sm:px-6 md:px-12">
+        {/* Description */}
+        <p className="max-w-xs sm:max-w-xl md:max-w-2xl text-base sm:text-lg md:text-lg text-black mt-4 sm:mt-6 leading-relaxed">
+          #proudsilverian
+        </p>
 
-                {/* Main Heading */}
-                <h1 className="text-3xl sm:text-4xl md:text-7xl text-black font-bold uppercase  sm:pt-16">
-                    Welcome to Silverline
-                </h1>
-
-                {/* Description */}
-                <p className="max-w-xs sm:max-w-xl md:max-w-2xl text-base sm:text-lg md:text-lg text-black mt-4 sm:mt-6 leading-relaxed">
-                    At Silverline, we believe our people are our greatest strength.
-                    Every employee plays a vital role in shaping our success, driving
-                    innovation, and delivering excellence.
-                </p>
-
-                {/* Button placeholder (optional) */}
-            </section>
-
-            {/* Wave Divider */}
-            <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-                <svg
-                    viewBox="0 0 1440 150"
-                    className="w-full h-16 sm:h-20 md:h-28"
-                    preserveAspectRatio="none"
-                >
-                    <path
-                        d="M0,80 C360,140 1080,0 1440,80 L1440,150 L0,150 Z"
-                        fill="#111111"
-                    />
-                </svg>
-            </div>
-        </div>
-    );
+        {/* Button placeholder (optional) */}
+      </section>
+    </div>
+  );
 };
 
 export default OverviewBanner;

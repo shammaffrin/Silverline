@@ -124,6 +124,36 @@ import Ablusion from "./productss/Ablusion.png";
 import Cabin from "./productss/Cabin.png";
 
 
+import ExcavatorYanmarVio55 from "./productss/EXCAVATOR YANMAR VIO55(RUBBER TRACK).png";
+import RollerBw211DCabin from "./productss/ROLLER BW211D cabin type.png";
+import RollerAmmannArx26 from "./productss/ROLLER AMMANN ARX26.png";
+import RollerBm120Ad from "./productss/ROLLER BM120AD.png";
+import ExcavatorYanmarVio35 from "./productss/EXCAVATOR YANMAR VIO35 RUBBER TRACK.png";
+import ExcavatorKomatsuPc400 from "./productss/EXCAVATOR KOMATSU PC400.png";
+import ExcavatorKomatsuPc210 from "./productss/EXCAVATOR KOMATSU PC210.png";
+import ExcavatorCat320 from "./productss/EXCAVATOR CAT 320.png";
+import ExcavatorJcbJs205 from "./productss/EXCAVATOR JCB JS 205.png";
+
+import ElectricBreakersBosch from "./productss/Electric Brakers Bosch.png";
+import DrillingMachineDewalt from "./productss/Drilling Machine Dewalt.png";
+import SteelBarBendingMachine from "./productss/Steel Bar Bending Machine.png";
+import CoreCuttingMachine from "./productss/Core Cutting Machine.png";
+import HandGrindersBosch from "./productss/Hand Grinders Bosch.png";
+import WaterPumps3Inch from "./productss/Water Pumps 3 INCH.png";
+
+import WheelLoaderKomatsuCat966L from "./productss/WHEEL LOADER KOMATSU CAT966L.png";
+import WheelLoaderKomatsuWa470 from "./productss/WHEEL LOADER KOMATSU WA470.png";
+import BoomLoaderJcb540170 from "./productss/BOOM LOADER JCB 540-170.png";
+
+import BackhoeLoaderJcb3Cx from "./productss/BACKHOE LOADER JCB 3CX.png";
+import BackhoeLoaderJcb3Dx from "./productss/BACKHOE LOADER JCB 3DX.png";
+import BackhoeLoaderCase570T from "./productss/BACKHOE_LOADER_CASE570T.png";
+
+import FloorScarifier from "./productss/floor scarifier.png";
+import SubmersiblePumps from "./productss/submersible pumps.png";
+import FloorGrindingMachine from "./productss/floor grinding machine.png";
+import BlockCutting from "./productss/Block Cutting.png";
+
 export {
   Logo,
   Generator,
@@ -242,4 +272,32 @@ export {
   SAW,
   Ablusion,
   Cabin,
+
+  ExcavatorYanmarVio55,
+  RollerBw211DCabin,
+  RollerAmmannArx26,
+  RollerBm120Ad,
+  ExcavatorYanmarVio35,
+  ExcavatorKomatsuPc400,
+  ExcavatorKomatsuPc210,
+  ExcavatorCat320,
+  ExcavatorJcbJs205,
+
+  ElectricBreakersBosch,
+  DrillingMachineDewalt,
+  SteelBarBendingMachine,
+  CoreCuttingMachine,
+  HandGrindersBosch,
+  WaterPumps3Inch,
+  WheelLoaderKomatsuCat966L,
+  WheelLoaderKomatsuWa470,
+  BoomLoaderJcb540170,
+  BackhoeLoaderJcb3Cx,
+  BackhoeLoaderJcb3Dx,
+  BackhoeLoaderCase570T,
+  FloorScarifier,
+  SubmersiblePumps,
+  FloorGrindingMachine,
+  BlockCutting,
+  
 };

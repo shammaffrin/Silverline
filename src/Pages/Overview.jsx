@@ -7,6 +7,8 @@ import OverWelcome from '../Components/OverviewWelcome';
 import AchieversBoard from '../Components/OverVIEWABoard';
 import CommunicationSection from '../Components/OverviewCommunication';
 import OrgChartSection from '../Components/OrgChart1';
+import ManagementMessage from '../Components/ManagementMessage';
+import Video from '../Components/Video';
 
 const Overview = () => {
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
@@ -18,6 +20,8 @@ const Overview = () => {
   return (
     <div>
       <OverWelcome />
+      <ManagementMessage/>
+      <Video/>
       <OverVision/>
       <OverViewPolicies />
       <OverviewBanner />

@@ -6,34 +6,51 @@ import {
   AirmanGenerator,
   AsphaltCutters,
   BackhoeLoader,
+  BackhoeLoaderCase570T,
+  BackhoeLoaderJcb3Cx,
+  BackhoeLoaderJcb3Dx,
+  BlockCutting,
+  BoomLoaderJcb540170,
   BOSS,
   Cabin,
   ConcreteMixers,
   CoreCutters,
+  CoreCuttingMachine,
   Cummins,
   Denyo,
+  DrillingMachineDewalt,
   ELECTREX,
   ESAB,
   Excavator,
+  ExcavatorCat320,
+  ExcavatorJcbJs205,
+  ExcavatorKomatsuPc210,
+  ExcavatorKomatsuPc400,
+  ExcavatorYanmarVio35,
   FGWilson,
+  FloorGrindingMachine,
+  FloorScarifier,
   Forklift,
   Generac,
   Generator,
   Gesan,
+  HandGrindersBosch,
   JackHammers,
   JET,
-  Komatsu,
   PISILVER,
   PlateCompactors,
   PowerFloat,
   RollerCompactors,
-  Rollers,
   SAW,
-  Telehandler,
+  SteelBarBendingMachine,
+  SubmersiblePumps,
   TELWIN,
   TowerLight,
   VacuumCleaners,
+  WaterPumps3Inch,
   WheelLoader,
+  WheelLoaderKomatsuCat966L,
+  WheelLoaderKomatsuWa470,
 } from "../assets";
 
 const categoriesData = {
@@ -688,7 +705,7 @@ const categoriesData = {
     description:
       "High-performance drilling machines from trusted brands, available in various voltage capacities.",
     data: {
-      DEWALT: [{ capacity: "127V", image: AsphaltCutters }],
+      DEWALT: [{ capacity: "127V", image: DrillingMachineDewalt }],
     },
   },
   "Jumping Rammer": {
@@ -706,8 +723,8 @@ const categoriesData = {
       "Reliable floor grinding machines from trusted brands, available in different voltage capacities for various applications.",
     data: {
       TRELAWNY: [
-        { capacity: "110V", image: AsphaltCutters },
-        { capacity: "220V", image: AsphaltCutters },
+        { capacity: "110V", image: FloorGrindingMachine },
+        { capacity: "220V", image: FloorGrindingMachine },
       ],
     },
   },
@@ -716,8 +733,8 @@ const categoriesData = {
     description:
       "Heavy-duty floor scarifiers from top brands, designed for efficient surface preparation.",
     data: {
-      AIRTEC: [{ capacity: "57 KG", image: AsphaltCutters }],
-      HUSQVARNA: [{ capacity: "72 KG", image: AsphaltCutters }],
+      AIRTEC: [{ capacity: "57 KG", image: FloorScarifier }],
+      HUSQVARNA: [{ capacity: "72 KG", image: FloorScarifier }],
     },
   },
   "Bar Cutting Machines": {
@@ -726,11 +743,11 @@ const categoriesData = {
       "Durable bar cutting machines from leading brands, available in various capacity sizes for different construction needs.",
     data: {
       SILLA: [
-        { capacity: "34 MM", image: AsphaltCutters },
-        { capacity: "36 MM", image: AsphaltCutters },
+        { capacity: "34 MM", image: SteelBarBendingMachine },
+        { capacity: "36 MM", image: SteelBarBendingMachine },
       ],
-      ICARO: [{ capacity: "40 MM", image: AsphaltCutters }],
-      "LA ROCHE": [{ capacity: "40 MM", image: AsphaltCutters }],
+      ICARO: [{ capacity: "40 MM", image: SteelBarBendingMachine }],
+      "LA ROCHE": [{ capacity: "40 MM", image: SteelBarBendingMachine }],
     },
   },
   "Bar Bending Machines": {
@@ -739,16 +756,16 @@ const categoriesData = {
       "Reliable bar bending machines from trusted brands, available in various capacity sizes for different construction needs.",
     data: {
       SILLA: [
-        { capacity: "36 MM", image: AsphaltCutters },
-        { capacity: "42 MM", image: AsphaltCutters },
-        { capacity: "50 MM", image: AsphaltCutters },
+        { capacity: "36 MM", image: SteelBarBendingMachine },
+        { capacity: "42 MM", image: SteelBarBendingMachine },
+        { capacity: "50 MM", image: SteelBarBendingMachine },
       ],
-      ICARO: [{ capacity: "36 MM", image: AsphaltCutters }],
+      ICARO: [{ capacity: "36 MM", image: SteelBarBendingMachine }],
       "LA ROCHE": [
-        { capacity: "36 MM", image: AsphaltCutters },
-        { capacity: "40 MM", image: AsphaltCutters },
+        { capacity: "36 MM", image: SteelBarBendingMachine },
+        { capacity: "40 MM", image: SteelBarBendingMachine },
       ],
-      KAPRIOL: [{ capacity: "36 MM", image: AsphaltCutters }],
+      KAPRIOL: [{ capacity: "36 MM", image: SteelBarBendingMachine }],
     },
   },
   "Block Cutting Machine": {
@@ -757,18 +774,18 @@ const categoriesData = {
       "Heavy-duty block cutting machines from top brands, designed for efficient cutting of concrete blocks.",
     data: {
       EXPERT: [
-        { capacity: "600 MM", image: AsphaltCutters },
-        { capacity: "700 MM", image: AsphaltCutters },
+        { capacity: "600 MM", image: BlockCutting },
+        { capacity: "700 MM", image: BlockCutting },
       ],
-      GOLZ: [{ capacity: "600 MM", image: AsphaltCutters }],
+      GOLZ: [{ capacity: "600 MM", image: BlockCutting }],
       IMER: [
-        { capacity: "600 MM", image: AsphaltCutters },
-        { capacity: "750 MM", image: AsphaltCutters },
+        { capacity: "600 MM", image: BlockCutting },
+        { capacity: "750 MM", image: BlockCutting },
       ],
-      SYNOVA: [{ capacity: "600 MM", image: AsphaltCutters }],
-      NORTON: [{ capacity: "650 MM", image: AsphaltCutters }],
-      TYROLIT: [{ capacity: "650 MM", image: AsphaltCutters }],
-      LISSMAC: [{ capacity: "700 MM", image: AsphaltCutters }],
+      SYNOVA: [{ capacity: "600 MM", image: BlockCutting }],
+      NORTON: [{ capacity: "650 MM", image: BlockCutting }],
+      TYROLIT: [{ capacity: "650 MM", image: BlockCutting }],
+      LISSMAC: [{ capacity: "700 MM", image: BlockCutting }],
     },
   },
   "Core Cutting Machine": {
@@ -776,7 +793,7 @@ const categoriesData = {
     description:
       "Durable core cutting machines suitable for concrete and asphalt coring applications.",
     data: {
-      SHIBUYA: [{ capacity: "110 KVA", image: AsphaltCutters }],
+      SHIBUYA: [{ capacity: "110 KVA", image: CoreCuttingMachine }],
     },
   },
 
@@ -794,23 +811,23 @@ const categoriesData = {
     description:
       "Portable hand grinders from trusted brands, ideal for grinding and cutting tasks.",
     data: {
-      BOSCH: [{ capacity: "110 VOLTAGE", image: CoreCutters }],
+      BOSCH: [{ capacity: "110 VOLTAGE", image: HandGrindersBosch }],
       DEWALT: [
-        { capacity: "110 VOLTAGE", image: CoreCutters },
-        { capacity: "115 VOLTAGE", image: CoreCutters },
-        { capacity: "220 VOLTAGE", image: CoreCutters },
+        { capacity: "110 VOLTAGE", image: HandGrindersBosch },
+        { capacity: "115 VOLTAGE", image: HandGrindersBosch },
+        { capacity: "220 VOLTAGE", image: HandGrindersBosch },
       ],
       KEYANG: [
-        { capacity: "110 VOLTAGE", image: CoreCutters },
-        { capacity: "220 VOLTAGE", image: CoreCutters },
+        { capacity: "110 VOLTAGE", image: HandGrindersBosch },
+        { capacity: "220 VOLTAGE", image: HandGrindersBosch },
       ],
       MAKITA: [
-        { capacity: "110 VOLTAGE", image: CoreCutters },
-        { capacity: "220 VOLTAGE", image: CoreCutters },
-        { capacity: "240 VOLTAGE", image: CoreCutters },
+        { capacity: "110 VOLTAGE", image: HandGrindersBosch },
+        { capacity: "220 VOLTAGE", image: HandGrindersBosch },
+        { capacity: "240 VOLTAGE", image: HandGrindersBosch },
       ],
-      METABO: [{ capacity: "220 VOLTAGE", image: CoreCutters }],
-      TRELAWNY: [{ capacity: "220 VOLTAGE", image: CoreCutters }],
+      METABO: [{ capacity: "220 VOLTAGE", image: HandGrindersBosch }],
+      TRELAWNY: [{ capacity: "220 VOLTAGE", image: HandGrindersBosch }],
     },
   },
   "Submersible Pump": {
@@ -819,11 +836,11 @@ const categoriesData = {
       "Reliable submersible pumps designed for efficient water transfer, available in multiple capacities.",
     data: {
       "2 INCH": [
-        { brand: "EASY POWER", image: CoreCutters },
-        { brand: "SHIMGE", image: CoreCutters },
-        { brand: "HAPPY", image: CoreCutters },
+        { brand: "EASY POWER", image: SubmersiblePumps },
+        { brand: "SHIMGE", image: SubmersiblePumps },
+        { brand: "HAPPY", image: SubmersiblePumps },
       ],
-      "4 INCH": [{ brand: "EASY POWER", image: CoreCutters }],
+      "4 INCH": [{ brand: "EASY POWER", image: SubmersiblePumps }],
     },
   },
 
@@ -833,20 +850,20 @@ const categoriesData = {
       "High-performance water pumps suitable for diverse applications, offered in various capacities.",
     data: {
       "2 INCH": [
-        { brand: "COMAX PRO", image: WheelLoader },
-        { brand: "FOXCO", image: WheelLoader },
-        { brand: "LUTIAN", image: WheelLoader },
-        { brand: "POTEREN", image: WheelLoader },
-        { brand: "SPELYAMA", image: WheelLoader },
-        { brand: "VACKSON", image: WheelLoader },
+        { brand: "COMAX PRO", image: WaterPumps3Inch },
+        { brand: "FOXCO", image: WaterPumps3Inch },
+        { brand: "LUTIAN", image: WaterPumps3Inch },
+        { brand: "POTEREN", image: WaterPumps3Inch },
+        { brand: "SPELYAMA", image: WaterPumps3Inch },
+        { brand: "VACKSON", image: WaterPumps3Inch },
       ],
       "3 INCH": [
-        { brand: "KAMA", image: WheelLoader },
-        { brand: "LUTIAN", image: WheelLoader },
+        { brand: "KAMA", image: WaterPumps3Inch },
+        { brand: "LUTIAN", image: WaterPumps3Inch },
       ],
       "4 INCH": [
-        { brand: "KAMA", image: WheelLoader },
-        { brand: "POTEREN", image: WheelLoader },
+        { brand: "KAMA", image: WaterPumps3Inch },
+        { brand: "POTEREN", image: WaterPumps3Inch },
       ],
     },
   },
@@ -884,8 +901,8 @@ const categoriesData = {
     description:
       "Versatile backhoe loaders for construction and digging, available in multiple capacities.",
     data: {
-      "3 TON": [{ brand: "JCB", image: BackhoeLoader }],
-      "5 TON": [{ brand: "CASE", image: BackhoeLoader }],
+      "3 TON": [{ brand: "JCB", image: BackhoeLoaderJcb3Cx }],
+      "5 TON": [{ brand: "CASE", image: BackhoeLoaderCase570T }],
     },
   },
 
@@ -894,7 +911,7 @@ const categoriesData = {
     description:
       "Reliable boom loaders designed for material handling applications.",
     data: {
-      "3 TON": [{ brand: "JCB", image: Telehandler }],
+      "3 TON": [{ brand: "JCB", image: BoomLoaderJcb540170 }],
     },
   },
 
@@ -903,13 +920,13 @@ const categoriesData = {
     description:
       "High-power excavators for heavy-duty operations, offered in various capacities.",
     data: {
-      "5 TON": [{ brand: "Yanmar", image: Excavator }],
+      "5 TON": [{ brand: "Yanmar", image: ExcavatorYanmarVio35 }],
       "20 TON": [
-        { brand: "Caterpillar", image: Excavator },
-        { brand: "JCB", image: Excavator },
-        { brand: "Komatsu", image: Excavator },
+        { brand: "Caterpillar", image: ExcavatorCat320 },
+        { brand: "JCB", image: ExcavatorJcbJs205 },
+        { brand: "Komatsu", image: ExcavatorKomatsuPc210 },
       ],
-      "40 TON": [{ brand: "Komatsu", image: Excavator }],
+      "40 TON": [{ brand: "Komatsu", image: ExcavatorKomatsuPc400 }],
     },
   },
 
@@ -919,8 +936,8 @@ const categoriesData = {
       "Efficient wheel loaders designed for construction and industrial use.",
     data: {
       "3 TON": [
-        { brand: "Caterpillar", image: WheelLoader },
-        { brand: "Komatsu", image: WheelLoader },
+        { brand: "Caterpillar", image: WheelLoaderKomatsuCat966L },
+        { brand: "Komatsu", image: WheelLoaderKomatsuWa470 },
       ],
     },
   },
