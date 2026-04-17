@@ -181,7 +181,7 @@ export const sections = {
     },
   },
 
-  operationsDesk: {
+  operations: {
     title: "Operations Desk",
     data: {
       name: "Arjun Ramachandran",

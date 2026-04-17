@@ -10,6 +10,7 @@ import Products from "./Pages/Products";
 import Overview from "./Pages/Overview";
 import Career from "./Pages/Career";
 import Apply from "./Pages/Apply";
+import DepartmentPage from "./Pages/DepartmentPage";
 
 import ProductDetails from "./Pages/ProductDetails"; // ⬅️ NEW IMPORT
 import ScrollToTop from "./Components/Scrolltop";
@@ -138,6 +139,21 @@ const App = () => {
                 transition={pageTransition}
               >
                 <Overview />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/overview/department/:dept"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={pageTransition}
+              >
+                <DepartmentPage />
               </motion.div>
             }
           />

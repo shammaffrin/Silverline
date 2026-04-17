@@ -73,7 +73,13 @@ const Video = () => {
   };
 
   return (
-    <div className="py-16">
+    <div className="pt-10 pb-36 relative">
+       {/* Wave Divider */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg viewBox="0 0 1440 150" className="w-full h-16 sm:h-20 md:h-28" preserveAspectRatio="none">
+          <path d="M0,80 C360,140 1080,0 1440,80 L1440,150 L0,150 Z" fill="#111111" />
+        </svg>
+      </div>
       {/* Heading */}
       <div className="flex justify-center mb-10">
         <h3 className="text-2xl md:text-3xl font-semibold tracking-wide">
