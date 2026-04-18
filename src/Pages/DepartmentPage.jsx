@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { sections } from "../Data/orgData";
-import { deptData } from "../Data/deptData"; // ✅ NEW
 import LoginNavbar from "../Components/LoginNavbar";
 import OrgChart from "../Components/Orgchart"; // ✅ FIXED
+import { deptData } from "../Data/DeptData";
 
 const DepartmentPage = () => {
   const { dept } = useParams();
