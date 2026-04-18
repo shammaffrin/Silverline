@@ -4,6 +4,7 @@ export const sections = {
     data: {
       name: "Shameela Naff",
       role: "Chief of Staff",
+      
       children: [
         {
           name: "Aiswarya K B",

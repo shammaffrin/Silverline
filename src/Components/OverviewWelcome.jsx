@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import LoginNavbar from "./LoginNavbar";
-import { CareerBanner1, Herobg1 } from "../assets";
+import { CareerBanner1, SilverBg } from "../assets";
 
 const OverviewBanner = () => {
   return (
@@ -9,7 +9,7 @@ const OverviewBanner = () => {
       <LoginNavbar />
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-30">
-        <img className="h-full object-cover" src={Herobg1} alt="" />
+        <img className="h-full w-full object-cover" src={SilverBg} alt="" />
       </div>
 
       {/* Content */}
