@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Logo } from "../assets";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiMenu, HiX } from "react-icons/hi";
+import { HiMenu, HiX, HiLockClosed } from "react-icons/hi";
 import LoginModal from "./LoginModal";
 
 const LoginNavbar = () => {
@@ -33,11 +33,9 @@ const LoginNavbar = () => {
     navigate("/overview");
   };
 
-  // 🔥 helper to convert text → URL slug
   const slugify = (text) =>
     text.toLowerCase().replace(/&/g, "and").replace(/\s+/g, "-");
 
-  // ✅ Nav Items with routes
   const navItems = [
     { name: "HOME", path: "/overview" },
 
@@ -76,6 +74,7 @@ const LoginNavbar = () => {
 
     {
       name: "SOP",
+      disabled: true,
       dropdown: ["SOP 1", "SOP 2"].map((item) => ({
         name: item,
         path: `/overview/sop/${slugify(item)}`,
@@ -84,6 +83,7 @@ const LoginNavbar = () => {
 
     {
       name: "FORMS",
+      disabled: true,
       dropdown: ["Form 1", "Form 2"].map((item) => ({
         name: item,
         path: `/overview/forms/${slugify(item)}`,
@@ -120,24 +120,30 @@ const LoginNavbar = () => {
             <ul className="flex gap-1 text-white font-light text-xs bg-[#00000040] backdrop-blur-sm px-2 py-1 rounded-full border border-white/20">
               {navItems.map((item) => (
                 <div key={item.name} className="relative group">
-                  {/* Main Item */}
                   <motion.li
-                    className={`px-4 py-2 rounded-full cursor-pointer ${
-                      location.pathname === item.path
-                        ? "bg-[#8B0000]"
-                        : "bg-transparent"
+                    className={`px-4 py-2 rounded-full flex items-center gap-1 cursor-pointer ${
+                      item.disabled
+                        ? "opacity-40 cursor-not-allowed"
+                        : location.pathname === item.path
+                          ? "bg-[#8B0000]"
+                          : "bg-transparent"
                     }`}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={!item.disabled && { scale: 1.05 }}
                   >
-                    {item.path ? (
+                    {item.disabled ? (
+                      <span className="flex items-center gap-1">
+                        <HiLockClosed />
+                        {item.name}
+                      </span>
+                    ) : item.path ? (
                       <Link to={item.path}>{item.name}</Link>
                     ) : (
                       <span>{item.name}</span>
                     )}
                   </motion.li>
 
-                  {/* Dropdown */}
-                  {item.dropdown && (
+                  {/* Dropdown (disabled items won't show) */}
+                  {!item.disabled && item.dropdown && (
                     <div className="absolute hidden group-hover:block top-[36px] left-0 bg-black/90 backdrop-blur-md rounded-lg p-3 min-w-[200px] z-50">
                       {item.dropdown.map((sub, i) => (
                         <Link
@@ -195,42 +201,46 @@ const LoginNavbar = () => {
             >
               {navItems.map((item, index) => (
                 <div key={index}>
-                  {/* Main */}
-                  <div
-                    className="flex justify-between items-center py-2 text-white cursor-pointer"
-                    onClick={() =>
-                      item.dropdown
-                        ? setOpenDropdown(openDropdown === index ? null : index)
-                        : setMenuOpen(false)
-                    }
-                  >
-                    {item.path ? (
-                      <Link to={item.path}>{item.name}</Link>
+                  <div className="flex justify-between items-center py-2 text-white">
+                    {item.disabled ? (
+                      <span className="flex items-center gap-2 opacity-40">
+                        <HiLockClosed />
+                        {item.name}
+                      </span>
+                    ) : item.path ? (
+                      <Link to={item.path} onClick={() => setMenuOpen(false)}>
+                        {item.name}
+                      </Link>
                     ) : (
-                      <span>{item.name}</span>
+                      <span
+                        onClick={() =>
+                          setOpenDropdown(openDropdown === index ? null : index)
+                        }
+                      >
+                        {item.name}
+                      </span>
                     )}
-                    {item.dropdown && <span>+</span>}
                   </div>
 
-                  {/* Dropdown */}
-                  {item.dropdown && openDropdown === index && (
-                    <div className="pl-4">
-                      {item.dropdown.map((sub, i) => (
-                        <Link
-                          key={i}
-                          to={sub.path}
-                          onClick={() => setMenuOpen(false)}
-                          className="block text-gray-300 text-sm py-1"
-                        >
-                          - {sub.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                  {!item.disabled &&
+                    item.dropdown &&
+                    openDropdown === index && (
+                      <div className="pl-4">
+                        {item.dropdown.map((sub, i) => (
+                          <Link
+                            key={i}
+                            to={sub.path}
+                            onClick={() => setMenuOpen(false)}
+                            className="block text-gray-300 text-sm py-1"
+                          >
+                            - {sub.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                 </div>
               ))}
 
-              {/* Login/Logout */}
               <div className="mt-4">
                 {isLoggedIn ? (
                   <button
@@ -259,7 +269,6 @@ const LoginNavbar = () => {
         </AnimatePresence>
       </motion.div>
 
-      {/* Modal */}
       <LoginModal
         show={showLogin}
         onClose={() => setShowLogin(false)}

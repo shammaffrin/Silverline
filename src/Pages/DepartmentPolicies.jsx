@@ -2,13 +2,11 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { Search, FileText, Download, Eye } from "lucide-react";
 import { policiesData } from "../Data/policies";
-import { div } from "framer-motion/client";
 import LoginNavbar from "../Components/LoginNavbar";
 
 export default function DepartmentPolicies() {
   const { department } = useParams();
 
-  // ✅ MISSING STATES (this was breaking your code)
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch] = useState("");
 
@@ -21,11 +19,21 @@ export default function DepartmentPolicies() {
     .toLowerCase()
     .trim();
 
-  // ✅ Filtering
-  const filteredPolicies = policiesData.filter((item) => {
-    const matchesDepartment =
-      item.department.toLowerCase() === formattedDepartment;
+  // ✅ Step 1: Department-specific policies
+  const departmentPolicies = policiesData.filter(
+    (item) => item.department.toLowerCase() === formattedDepartment,
+  );
 
+  // ✅ Step 2: Fallback to General if empty
+  const basePolicies =
+    departmentPolicies.length > 0
+      ? departmentPolicies
+      : policiesData.filter(
+          (item) => item.department.toLowerCase() === "general",
+        );
+
+  // ✅ Step 3: Apply category + search filters
+  const filteredPolicies = basePolicies.filter((item) => {
     const matchesCategory =
       activeCategory === "All" || item.category === activeCategory;
 
@@ -33,12 +41,13 @@ export default function DepartmentPolicies() {
       .toLowerCase()
       .includes(search.toLowerCase());
 
-    return matchesDepartment && matchesCategory && matchesSearch;
+    return matchesCategory && matchesSearch;
   });
 
   return (
     <div>
-        <LoginNavbar/>
+      <LoginNavbar />
+
       <div className="w-full min-h-screen bg-gray-100 px-4 sm:px-6 md:px-16 pt-38 py-10">
         {/* Header */}
         <div className="mb-8">
@@ -49,6 +58,14 @@ export default function DepartmentPolicies() {
             Browse all {formattedDepartment} related documents.
           </p>
         </div>
+
+        {/* ⚠️ Fallback Message */}
+        {departmentPolicies.length === 0 && (
+          <div className="mb-6 text-sm text-orange-500 bg-orange-50 border border-orange-200 px-4 py-2 rounded-lg">
+            No specific policies found for this department. Showing General
+            policies instead.
+          </div>
+        )}
 
         {/* Controls */}
         <div className="flex flex-col md:flex-row md:justify-between gap-4 mb-6">

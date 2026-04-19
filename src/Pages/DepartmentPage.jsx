@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate  } from "react-router-dom";
 import { sections } from "../Data/orgData";
 import LoginNavbar from "../Components/LoginNavbar";
 import OrgChart from "../Components/Orgchart"; // ✅ FIXED
@@ -7,6 +7,7 @@ import { deptData } from "../Data/DeptData";
 
 const DepartmentPage = () => {
   const { dept } = useParams();
+    const navigate = useNavigate();
 
   const formatKey = (slug) =>
     slug
@@ -84,7 +85,10 @@ const DepartmentPage = () => {
               ))
             ) : (
               <>
-                <button className="px-5 py-2.5 bg-[#C97E7E] text-white text-sm rounded-lg hover:bg-[#b86d6d] transition">
+                <button
+                  onClick={() => navigate(`/overview/policies/${dept}`)} // ✅ dynamic route
+                  className="px-5 py-2.5 bg-[#C97E7E] text-white text-sm rounded-lg hover:bg-[#b86d6d] transition"
+                >
                   View Policies
                 </button>
                 <button className="px-5 py-2.5 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">
