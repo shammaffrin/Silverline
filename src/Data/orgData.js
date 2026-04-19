@@ -1,11 +1,15 @@
+import { shanid } from "./images";
+import { shameela } from "./images";
+
 export const sections = {
   People$Culture: {
     title: "People & Culture",
     data: {
-      name: "Shameela Naff",
+      name: "Shameela nafilah",
       role: "Chief of Staff",
       MailId: "shameela@silverlinerental.com",
       PhNo: "506440214",
+      photo :shameela ,
       JobOverview: "",
       children: [
         {
@@ -34,7 +38,7 @@ export const sections = {
   administration: {
     title: "Administration",
     data: {
-      name: "Shameela Naff",
+      name: "Shameela nafilah",
       role: "Chief of Staff",
       MailId: "shameela@silverlinerental.com",
       PhNo: "506440214",
@@ -91,7 +95,7 @@ export const sections = {
   itTech: {
     title: "IT & Tech",
     data: {
-      name: "Shameela Naff",
+      name: "Shameela nafilah",
       role: "Chief of Staff",
       MailId: "shameela@silverlinerental.com",
       PhNo: "506440214",
