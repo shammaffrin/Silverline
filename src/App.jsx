@@ -11,11 +11,17 @@ import Overview from "./Pages/Overview";
 import Career from "./Pages/Career";
 import Apply from "./Pages/Apply";
 import DepartmentPage from "./Pages/DepartmentPage";
+import ProductDetails from "./Pages/ProductDetails";
 
-import ProductDetails from "./Pages/ProductDetails"; // ⬅️ NEW IMPORT
+// ✅ NEW IMPORT
+import DepartmentPolicies from "./Pages/DepartmentPolicies";
+
 import ScrollToTop from "./Components/Scrolltop";
 
 import "./App.css";
+import AnnouncementsPage from "./Pages/Announcement";
+import Achiever from "./Pages/Achiever";
+import JobsPage from "./Pages/JobsPage";
 
 const pageVariants = {
   initial: { opacity: 0, y: 30 },
@@ -37,6 +43,7 @@ const App = () => {
 
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
+          {/* Home */}
           <Route
             path="/"
             element={
@@ -52,6 +59,7 @@ const App = () => {
             }
           />
 
+          {/* About */}
           <Route
             path="/about"
             element={
@@ -67,6 +75,7 @@ const App = () => {
             }
           />
 
+          {/* Blog */}
           <Route
             path="/blog"
             element={
@@ -82,6 +91,7 @@ const App = () => {
             }
           />
 
+          {/* Contact */}
           <Route
             path="/contact"
             element={
@@ -97,6 +107,7 @@ const App = () => {
             }
           />
 
+          {/* Products */}
           <Route
             path="/products"
             element={
@@ -112,7 +123,7 @@ const App = () => {
             }
           />
 
-          {/* ⭐ New Dynamic Product Details Route */}
+          {/* Product Details */}
           <Route
             path="/product/:category/:sub/:index"
             element={
@@ -128,6 +139,7 @@ const App = () => {
             }
           />
 
+          {/* Overview */}
           <Route
             path="/overview"
             element={
@@ -143,6 +155,7 @@ const App = () => {
             }
           />
 
+          {/* Department Page */}
           <Route
             path="/overview/department/:dept"
             element={
@@ -158,6 +171,69 @@ const App = () => {
             }
           />
 
+          {/* ✅ NEW: Department Policies Page */}
+          <Route
+            path="/overview/policies/:department"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={pageTransition}
+              >
+                <DepartmentPolicies />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/overview/announcements"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={pageTransition}
+              >
+                <AnnouncementsPage />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/overview/achievers"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={pageTransition}
+              >
+                <Achiever />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/overview/jobs"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={pageTransition}
+              >
+                <JobsPage />
+              </motion.div>
+            }
+          />
+
+
+          {/* Careers */}
           <Route
             path="/careers"
             element={
@@ -173,6 +249,7 @@ const App = () => {
             }
           />
 
+          {/* Apply */}
           <Route
             path="/apply"
             element={

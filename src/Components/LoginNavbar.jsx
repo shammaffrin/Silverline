@@ -68,7 +68,14 @@ const LoginNavbar = () => {
 
     {
       name: "POLICIES",
-      dropdown: ["General Policy", "Department-wise Policy"].map((item) => ({
+      dropdown: [
+        "General",
+        "Finance",
+        "Inventory",
+        "IT & Tech",
+        "Logistics",
+        "People & Culture",
+      ].map((item) => ({
         name: item,
         path: `/overview/policies/${slugify(item)}`,
       })),

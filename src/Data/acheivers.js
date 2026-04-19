@@ -1,3 +1,5 @@
+import { Shanid } from "../assets/staff/staff";
+
 export const achieversData = [
   // COS OFFICE
   {
@@ -8,7 +10,7 @@ export const achieversData = [
     department: "People & Culture",
     month: "January 2026",
     award: "Employee of the Month",
-    image: "/images/emp1.jpg",
+    image: Shanid,
   },
   {
     id: 2,
@@ -18,7 +20,7 @@ export const achieversData = [
     department: "Inventory",
     month: "January 2026",
     award: "Operational Excellence",
-    image: "/images/emp2.jpg",
+    image: Shanid,
   },
 
   // REVOPS OFFICE
@@ -31,7 +33,7 @@ export const achieversData = [
     subDepartment: "Logistics",
     month: "January 2026",
     award: "Best Performer",
-    image: "/images/emp3.jpg",
+    image: Shanid,
   },
   {
     id: 4,
@@ -41,6 +43,6 @@ export const achieversData = [
     department: "Sales",
     month: "January 2026",
     award: "Top Sales Achiever",
-    image: "/images/emp4.jpg",
+    image: Shanid,
   },
 ];

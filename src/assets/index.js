@@ -1,6 +1,7 @@
 import Logo from "./Logo.png";
 import Avatar from "./avatar.png";
 import LogoNew from "./LogoNew.png";
+import SilverBg from "./silverbg.webp"
 import Herobg1 from "./bannerimg.jpg";
 import Herobg2 from "./bannerimg2.jpg";
 import Herobg3 from "./bannerimg3.jpg";
@@ -154,9 +155,13 @@ import SubmersiblePumps from "./productss/submersible pumps.png";
 import FloorGrindingMachine from "./productss/floor grinding machine.png";
 import BlockCutting from "./productss/Block Cutting.png";
 
+import Farook from "./Management/md.jpeg"
+
 export {
   Logo,
+  Farook,
   Generator,
+  SilverBg,
   Avatar,
   LogoNew,
   Herobg1,

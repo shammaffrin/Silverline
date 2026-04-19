@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 
 // ✅ IMPORT FILES (IMPORTANT FOR VITE)
-import thumb from "../assets/Management/shamila.jpeg";
 import videoFile from "../assets/Management/sample.mp4";
+import { Farook} from "../assets";
 
 const Video = () => {
   const [play, setPlay] = useState(false);
@@ -99,7 +99,7 @@ const Video = () => {
           {/* Thumbnail / Video */}
           {!play ? (
             <img
-              src={thumb}
+              src={Farook}
               alt="Video Thumbnail"
               className="w-full h-full object-cover transition duration-500 hover:scale-110"
             />
