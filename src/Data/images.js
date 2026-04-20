@@ -59,6 +59,46 @@ import abdulrahiman from "../assets/staff/AbdulRahiman.jpeg";
 import haris from "../assets/staff/harisb.jpg";
 import sarang from "../assets/staff/SARANG.jpeg"
 import thanzil from "../assets/Management/thanzil.jpeg"
+import hakeem from "../assets/staff/Abdul Hakeem.jpeg"
+import lakshmi from "../assets/staff/Lakshmi K.jpg"
+import ashil from "../assets/staff/ashil ashi.jpg"
+import afsal from "../assets/staff/Mohammed Afsal Nazar.jpeg"
+import anwar from "../assets/staff/Anwar Logistics.jpg"
+import ashrafkcr from "../assets/staff/AshrafKCR.jpeg"
+import ajeesh from "../assets/staff/AJEESH MS.jpg"
+import athira from "../assets/staff/Athira.JPG"
+import aswin from "../assets/staff/Aswin Silver.jpg"
+import ayishath from "../assets/staff/Ayishath Rinsana.png"
+import arun from "../assets/staff/Arundas.jpeg"
+import aswathy from "../assets/staff/Aswathy.jpg"
+import anju from "../assets/staff/Anju Aravind.jpg"
+import ashrafk from "../assets/staff/Ashraf Kandothmeethal.jpeg"
+import ajeeshbiju from "../assets/staff/AJEESH BIJU.jpg"
+// import diya from "../assets/staff/"
+// import fasil from "../assets/staff/"
+import irshan from "../assets/staff/Irshan K.png"
+// import jesvin from "../assets/staff/"
+import misab from "../assets/staff/misab.jpeg"
+import nabeel from "../assets/staff/Nabeel Sha.png"
+import nishad from "../assets/staff/nishad muhammedap.jpg"
+// import rajthomas from "../assets/staff/"
+import rithu from "../assets/staff/RITHUPARNAG H PP.jpeg"
+// import shammil from "../assets/staff/"
+import shabeer from "../assets/staff/shabeer o.jpeg"
+import sifin from "../assets/staff/Mohammad Sifin.jpeg"
+import sharath from "../assets/staff/Sharath Krishnan Kalloor.jpeg"
+// import saif from "../assets/staff/"
+import sainudeen from "../assets/staff/Sainudheen Tt.png"
+import sayoojya from "../assets/staff/Sayoojya.jpeg"
+// import shibil from "../assets/staff/"
+import shehin from "../assets/staff/Shehin Malik.jpeg"
+import sreejith from "../assets/staff/Sreejith Vp.jpg"
+// import stefy from "../assets/staff/"
+import safna from "../assets/staff/Safna Nizar.png"
+import shahina from "../assets/staff/SHAHINA MN.jpeg"
+import shahanas from "../assets/staff/shahanas vs.png"
+
+
 export {
   shameela,
   thanzil,
@@ -97,7 +137,6 @@ export {
   asarudheen,
   ajmalp,
   basith,
-  shafi,
   fahmi,
   ajsal,
   shanid,
@@ -121,4 +160,35 @@ export {
   abdulrahiman,
   haris,
   sarang,
+  hakeem,
+  lakshmi,
+  nishad,
+  ashil,
+  shabeer,
+  sifin,
+  afsal,
+  sharath,
+  nabeel,
+  anwar,
+  shafi,
+  rithu,
+  misab,
+  sainudeen,
+  irshan,
+  ashrafkcr,
+  ajeesh,
+  sayoojya,
+  ashrafk,
+  ajeeshbiju,
+  athira,
+  aswin,
+  ayishath,
+  shehin,
+  sreejith,
+  arun,
+  aswathy,
+  safna,
+  shahina,
+  anju,
+  shahanas,
 };

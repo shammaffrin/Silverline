@@ -1,5 +1,5 @@
 
-import { abdulrahiman, adarsh, aishwaryakb, ajmal, ajooba, ajsal, akshay, aneesp, arafath, arundas, asarudheen, Ashrafkcr, basith, dipin, elayarasan, fahmi, gulam, hannan, haris, haseeb, jaseel, jithin, kiran, lucky, mhdabdulla, midhun, miruthika, najma, naveensebi, noorudheen, nuzhat, osama, Radhika, rajazain, rakesh, ranju, roshan, safi, sahal, sahilabbas, sayooj, shafi, shameela, shanid, shinas, shivam, ShubasAli, sooraj, sreenath, thanzil, vignesh, vijay, Vipin } from "./images";
+import { abdulrahiman, adarsh, afsal, aishwaryakb, ajeesh, ajmal, ajooba, ajsal, akshay, aneesp, anju, anwar, arafath, arun, arundas, asarudheen, ashil, ashrafk, Ashrafkcr, aswathy, aswin, athira, ayishath, basith, dipin, elayarasan, fahmi, gulam, hakeem, hannan, haris, haseeb, irshan, jaseel, jithin, kiran, lakshmi, lucky, mhdabdulla, midhun, miruthika, misab, nabeel, najma, naveensebi, nishad, noorudheen, nuzhat, osama, Radhika, rajazain, rakesh, ranju, rithu, roshan, safi, safna, sahal, sahilabbas, sainudeen, sayooj, sayoojya, shabeer, shafi, shahanas, shahina, shameela, shanid, sharath, shehin, shinas, shivam, ShubasAli, sifin, sooraj, sreejith, sreenath, thanzil, vignesh, vijay, Vipin } from "./images";
 
 export const sections = {
   People$Culture: {
@@ -773,13 +773,13 @@ export const sections = {
           role: "Sales Admin",
           MailId: "hakeem.ma@silverlinerental.com",
           PhNo: "586051204",
-          // photo :hakeem ,
+          photo :hakeem ,
           JobOverview: "Manages sales administration, quotation approvals, reporting, and CRM/ERP coordination.",
           children: [
             {
               name: "Lakshmi K", role: "Sales Coordinator", MailId: "lakshmi@silverlinerental.com",
               PhNo: "508391204",
-              // photo :lakshmi ,
+              photo :lakshmi ,
               JobOverview: "Supports the overall coordination of the RevOps department, including managing the calendars and meetings of the Business Manager, while also handling invoice preparation, documentation validation, and coordination for rental operations.", children: []
             },
           ],
@@ -804,13 +804,13 @@ export const sections = {
             {
               name: "Mohd Nishad", role: "Sales Engineer", MailId: "nishad@silverlinerental.com",
               PhNo: "566038373",
-              // photo :nishad ,
+              photo :nishad ,
               JobOverview: "", children: []
             },
             {
               name: "Ashil K", role: "Sales Engineer", MailId: "ashil@silverlinerental.com",
               PhNo: "586051220",
-              // photo :ashil ,
+              photo :ashil ,
               JobOverview: "", children: []
             },
             {
@@ -818,14 +818,14 @@ export const sections = {
               role: "Sales Coordinator Executive",
               MailId: "shabeer@silverlinerental.com",
               PhNo: "582519463",
-              // photo :shabeer ,
+              photo :shabeer ,
               JobOverview: "",
               children: [],
             },
             {
               name: "Mohd Sifin", role: "Sales Executive", MailId: "sifin@silverlinerental.com",
               PhNo: "504328771",
-              // photo :sifin ,
+              photo :sifin ,
               JobOverview: "", children: []
             },
           ],
@@ -835,7 +835,7 @@ export const sections = {
           role: "Sr. Sales Engineer",
           MailId: "afsal@silverlinerental.com",
           PhNo: "547477171",
-          // photo :afsal ,
+          photo :afsal ,
           JobOverview: "Leads high-value sales, customer expansion and drives revenue growth",
           children: [],
         },
@@ -844,13 +844,13 @@ export const sections = {
           role: "Sr. Sales Engineer",
           MailId: "sharath@silverlinerental.com",
           PhNo: "545437171",
-          // photo :sharath ,
+          photo :sharath ,
           JobOverview: "Leads high-value sales, customer expansion and drives revenue growth",
           children: [
             {
               name: "Nabeel Sha", role: "Sales Engineer", MailId: "nabeel@silverlinerental.com",
               PhNo: "542447171",
-              // photo :nabeel ,
+              photo :nabeel ,
               JobOverview: "", children: []
             },
           ],
@@ -866,7 +866,7 @@ export const sections = {
             {
               name: "Amad M", role: "Sales Executive", MailId: "anwar@silverlinerental.com",
               PhNo: "542007171",
-              // photo :anwar ,
+              photo :anwar ,
               JobOverview: "Supports sales team in lead generation, coordination, and customer follow-ups.", children: []
             },
             {
@@ -887,7 +887,7 @@ export const sections = {
           children: [{
             name: "Anwar Sadath", role: "Sales Executive", MailId: "anwar@silverlinerental.com",
             PhNo: "508576962",
-            // photo :anwar ,
+            photo :anwar ,
             JobOverview: "", children: []
           }],
         },
@@ -910,13 +910,13 @@ export const sections = {
           role: "Collection Team Lead",
           MailId: "shafi@silverlinerental.com",
           PhNo: "558716880",
-          // photo :shafi ,
+          photo :shafi ,
           JobOverview: "",
           children: [
             {
               name: "Rithu Parnagosh", role: "Collection Coordinator & Documents Contoller", MailId: "",
               PhNo: "",
-              // photo :rithu ,
+              photo :rithu ,
               JobOverview: "", children: []
             },
             {
@@ -924,26 +924,26 @@ export const sections = {
               role: "Collection Coordinator & Documents Controller",
               MailId: "misab@silverlinerental.com",
               PhNo: "508179771",
-              // photo :misab ,
+              photo :misab ,
               JobOverview: "",
               children: [],
             },
             {
               name: "Sainuddeen", role: "Credit Controller", MailId: "sainuddin@silverlinerental.com",
               PhNo: "504357784",
-              // photo :sainuddeen ,
+              photo :sainudeen ,
               JobOverview: "Handles receivables tracking, customer follow-ups, and credit control activities.Approach for payment follow-ups, credit limits, and collection support.", children: []
             },
             {
               name: "Irshan K", role: "Credit Controller", MailId: "irshan@silverlinerental.com",
               PhNo: "564085474",
-              // photo :irshan ,
+              photo :irshan ,
               JobOverview: "Handles receivables tracking, customer follow-ups, and credit control activities.Approach for payment follow-ups, credit limits, and collection support.", children: []
             },
             {
               name: "Ashraf MPR", role: "Collection Agent", MailId: "ashrafmpr@silverlinerental.com",
               PhNo: "502829640",
-              // photo :ashraf ,
+              photo :ashrafk,
               JobOverview: "", children: []
             },
           ],
@@ -967,7 +967,7 @@ export const sections = {
           role: "Invoice Team Lead",
           MailId: "ajeesh@silverlinerental.com",
           PhNo: "523241895",
-          // photo :ajeesh ,
+          photo :ajeesh ,
           JobOverview: "",
           children: [
             {
@@ -975,7 +975,7 @@ export const sections = {
               role: "Invoice Coordinator",
               MailId: "sayoojya@silverlinerental.com",
               PhNo: "565839535",
-              // photo :sayoojiya ,
+              photo :sayoojya ,
               JobOverview: "Manages invoicing, documentation, and coordination for the day-to-day sales activities of Senior Sales Engineer Mr. Raj Thomas.",
               children: [],
             },
@@ -984,7 +984,7 @@ export const sections = {
               role: "Invoice Coordinator",
               MailId: "athira@silverlinerental.com",
               PhNo: "506440365",
-              // photo :athira ,
+              photo :athira ,
               JobOverview: "",
               children: [],
             },
@@ -1011,7 +1011,7 @@ export const sections = {
               role: "Sales Secretary",
               MailId: "accountsuae2@silverlinerental.com",
               PhNo: "504396595",
-              // photo :aswin ,
+              photo :aswin ,
               JobOverview: "",
               children: [],
             },
@@ -1020,7 +1020,7 @@ export const sections = {
               role: "Sales Secretary",
               MailId: "rinsana@silverlinerental.com",
               PhNo: "508576365",
-              // photo :ayishath ,
+              photo :ayishath ,
               JobOverview: "Manages invoicing, documentation, and coordination for the day-to-day sales activities of Senior Sales Engineer Mr. Afsal Nazar.",
               children: [],
             },
@@ -1029,7 +1029,7 @@ export const sections = {
               role: "Sales Secretary",
               MailId: "shehin@silverlinerental.com",
               PhNo: "506440142",
-              // photo :shehin ,
+              photo :shehin ,
               JobOverview: "",
               children: [],
             },
@@ -1038,7 +1038,7 @@ export const sections = {
               role: "Sales Secretary",
               MailId: "sreejith@silverlinerental.com",
               PhNo: "501089278",
-              // photo :sreejith ,
+              photo :sreejith ,
               JobOverview: "Manages invoicing, documentation, and coordination for the day-to-day sales activities of Sales Engineer Mr. Nishad Muhammed.",
               children: [],
             },
@@ -1047,7 +1047,7 @@ export const sections = {
               role: "Sales Secretary",
               MailId: "arun@silverlinerental.com",
               PhNo: "569926608",
-              // photo :arun ,
+              photo :arun ,
               JobOverview: "Manages invoicing, documentation, and coordination for the day-to-day sales activities of Sales Engineer Mr. Ashil K.",
               children: [],
             },
@@ -1056,7 +1056,7 @@ export const sections = {
               role: "Sales Secretary",
               MailId: "aswathy@silverlinerental.com",
               PhNo: "501089235",
-              // photo :aswathi ,
+              photo :aswathy ,
               JobOverview: "Manages invoicing, documentation, and coordination for the day-to-day sales activities of Senior Sales Engineer Mr. Saifudheen.",
               children: [],
             },
@@ -1074,7 +1074,7 @@ export const sections = {
               role: "Sales Secretary",
               MailId: "safna@silverlinerental.com",
               PhNo: "504396681",
-              // photo :safna ,
+              photo :safna ,
               JobOverview: "Manages invoicing, documentation, and coordination for the day-to-day sales activities ",
               children: [],
             },
@@ -1083,7 +1083,7 @@ export const sections = {
               role: "Sales Secretary",
               MailId: "shahina@silverlinerental.com",
               PhNo: "565015960",
-              // photo :shahina ,
+              photo :shahina ,
               JobOverview: "Manages invoicing, documentation, and coordination for the day-to-day sales activities of Senior Sales Engineer Mr. Jesvin Antony.",
               children: [],
             },
@@ -1092,7 +1092,7 @@ export const sections = {
               role: "Sales Secretary",
               MailId: "anju@silverlinerental.com",
               PhNo: "508182994",
-              // photo :anju ,
+              photo :anju ,
               JobOverview: "Manages invoicing, documentation, and coordination for the day-to-day sales activities of Sales Executive Mr. Fasil P.",
               children: [],
             },
@@ -1101,7 +1101,7 @@ export const sections = {
               role: "Sales Secretary",
               MailId: "shahanas@silverlinerental.com",
               PhNo: "569926604",
-              // photo :shahanas ,
+              photo :shahanas ,
               JobOverview: "Manages invoicing, documentation, and coordination for the day-to-day sales activities of Senior Sales Engineer Mr. Sharath Krishnan.",
               children: [],
             },
