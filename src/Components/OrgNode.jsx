@@ -8,13 +8,36 @@ export default function OrgNode({ node }) {
 
       {/* Card */}
       <div
-        onClick={() => setOpen(true)}
-        className="w-28 py-2 px-2 bg-white border border-gray-400 
-                   rounded-lg text-center shadow-sm cursor-pointer hover:shadow-md transition"
-      >
-        <p className="text-[10px] font-semibold truncate">{node.name}</p>
-        <p className="text-[6px] text-gray-500 truncate">{node.role}</p>
+  onClick={() => setOpen(true)}
+  className="w-48 flex items-center bg-white border border-gray-300 
+             rounded-lg shadow-sm cursor-pointer 
+             hover:shadow-md hover:scale-105 transition overflow-hidden"
+>
+  {/* Left - Image */}
+  <div className="w-16 h-16 bg-gray-200 flex-shrink-0">
+    {node.photo ? (
+      <img
+        src={node.photo}
+        alt={node.name}
+        className="w-full h-full object-cover "
+      />
+    ) : (
+      <div className="w-full h-full flex items-center justify-center text-[8px] text-gray-400">
+        No Image
       </div>
+    )}
+  </div>
+
+  {/* Right - Name & Role */}
+  <div className="flex flex-col justify-center px-2 py-1">
+    <p className="text-[11px] font-semibold leading-tight truncate">
+      {node.name}
+    </p>
+    <p className="text-[9px] flex justify-center items-center text-gray-500 truncate">
+      {node.role}
+    </p>
+  </div>
+</div>
 
       {/* 🔥 Modal */}
      {open && (
@@ -23,7 +46,7 @@ export default function OrgNode({ node }) {
     onClick={() => setOpen(false)}
   >
     <div
-      className="bg-white rounded-xl shadow-xl w-[420px] max-w-[90%] p-5 relative flex gap-4"
+      className="bg-white rounded-xl shadow-xl w-[460px] max-w-[90%] p-5 relative flex gap-4"
       onClick={(e) => e.stopPropagation()}
     >
       {/* Close */}
@@ -35,7 +58,7 @@ export default function OrgNode({ node }) {
       </button>
 
       {/* Left - Image */}
-      <div className="w-32 h-32 bg-gray-200 rounded-md overflow-hidden flex-shrink-0">
+      <div className="w-45 h-45 bg-gray-200 rounded-md overflow-hidden flex-shrink-0">
         {node.photo ? (
           <img
             src={node.photo}
@@ -51,7 +74,7 @@ export default function OrgNode({ node }) {
 
       {/* Right - Details */}
       <div className="flex flex-col justify-center flex-1">
-        <h2 className="text-sm font-semibold">{node.name}</h2>
+        <h2 className="text-xl font-semibold">{node.name}</h2>
         <p className="text-xs text-gray-500 mb-2">{node.role}</p>
 
         <div className="text-xs space-y-1">

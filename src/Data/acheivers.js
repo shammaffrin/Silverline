@@ -1,4 +1,4 @@
-import { Shanid } from "../assets/staff/staff";
+import arafath from "../assets/staff/arafath.jpeg"
 
 export const achieversData = [
   // COS OFFICE
@@ -10,7 +10,7 @@ export const achieversData = [
     department: "People & Culture",
     month: "January 2026",
     award: "Employee of the Month",
-    image: Shanid,
+    image: arafath,
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ export const achieversData = [
     department: "Inventory",
     month: "January 2026",
     award: "Operational Excellence",
-    image: Shanid,
+    image:arafath,
   },
 
   // REVOPS OFFICE
@@ -33,7 +33,7 @@ export const achieversData = [
     subDepartment: "Logistics",
     month: "January 2026",
     award: "Best Performer",
-    image: Shanid,
+    image: arafath,
   },
   {
     id: 4,
@@ -43,6 +43,6 @@ export const achieversData = [
     department: "Sales",
     month: "January 2026",
     award: "Top Sales Achiever",
-    image: Shanid,
+    image: arafath,
   },
 ];
