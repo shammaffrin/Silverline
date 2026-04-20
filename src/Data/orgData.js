@@ -491,6 +491,9 @@ export const sections = {
         {
           name: "Sahil Abbas",
           role: "Workshop Head",
+          MailId: "sahil@silverlinerental.com",
+              PhNo: "504342867",
+              JobOverview: "Oversees yard operations, machine readiness, and fleet utilization.Approach for yard operations, machine availability, and utilization concerns.", 
           children: [
             {
               name: "Rajesh Stany", role: "Workshop Manager", MailId: "sahil@silverlinerental.com",

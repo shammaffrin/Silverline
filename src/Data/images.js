@@ -55,11 +55,14 @@ import adarsh from "../assets/staff/adarshv.jpg"
 import mohdsafwan from "../assets/staff/mohdsafwan.jpeg"
 import kiran from "../assets/staff/kiranbaig.jpeg"
 import vigneshv from "../assets/staff/VigneshV.jpg"
-import abdulrahiman from "../assets/staff/AbdulRahiman.jpg"
+import abdulrahiman from "../assets/staff/AbdulRahiman.jpeg"
+import albert from "../assets/staff/albert.jpeg"
+import harisb from "../assets/staff/harisb.jpg"
+import sarang from "../assets/staff/sarang.jpeg"
 import haris from "../assets/staff/harisb.jpg"
-import haris from "../assets/staff/harisb.jpg"
-import haris from "../assets/staff/harisb.jpg"
-import haris from "../assets/staff/harisb.jpg"
+import harisb from "../assets/staff/harisb.jpg"
+
+
 export {
   shameela,aishwaryakb,miruthika,ajooba,rakesh,Ashrafkcr,Athari,ShubasAli,roshan,shivam
   
