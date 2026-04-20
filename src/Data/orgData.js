@@ -1,11 +1,15 @@
+
+import { aishwaryakb, ajooba, miruthika, shameela } from "./images";
+
 export const sections = {
   People$Culture: {
     title: "People & Culture",
     data: {
-      name: "Shameela Naff",
+      name: "Shameela nafilah",
       role: "Chief of Staff",
       MailId: "shameela@silverlinerental.com",
       PhNo: "506440214",
+      photo :shameela ,
       JobOverview: "",
       children: [
         {
@@ -13,16 +17,17 @@ export const sections = {
           role: "Executive Assistant",
           MailId: "",
           PhNo: "502379792",
+          photo :aishwaryakb ,
           JobOverview: "Supports the Chief of Staff in managing schedules, communication, reports, trackers, and departmental coordination.Approach for meeting scheduling, official communication, tracker updates, reports, and coordination related to the COS Office.",
           children: [
             {
               name: "Miruthika D", role: "People & Culture Assistant", MailId: "miruthika@silverlinerental.com",
-              PhNo: "506372554",
+              PhNo: "506372554",photo :miruthika ,
               JobOverview: "Handles recruitment, hiring coordination, onboarding, and employee insurance processes. Approach for hiring needs, interview coordination, offer letters, onboarding, and insurance-related support.", children: []
             },
             {
               name: "Ajooba Anjoom", role: "People & Culture Assistant", MailId: "ajooba@silverlinerental.com",
-              PhNo: "565015964",
+              PhNo: "565015964",photo :ajooba,
               JobOverview: "Manages attendance, leave, payroll inputs, employee data, grievances, and HR reporting. Approach for attendance issues, leave updates, payroll inputs, HR records, and employee concerns.", children: []
             },
           ],
@@ -34,7 +39,7 @@ export const sections = {
   administration: {
     title: "Administration",
     data: {
-      name: "Shameela Naff",
+      name: "Shameela nafilah",
       role: "Chief of Staff",
       MailId: "shameela@silverlinerental.com",
       PhNo: "506440214",
@@ -91,7 +96,7 @@ export const sections = {
   itTech: {
     title: "IT & Tech",
     data: {
-      name: "Shameela Naff",
+      name: "Shameela nafilah",
       role: "Chief of Staff",
       MailId: "shameela@silverlinerental.com",
       PhNo: "506440214",
@@ -396,9 +401,9 @@ export const sections = {
               PhNo: "",
               JobOverview: "Manages scheduling of machines and technicians in Abu Dhabi to support smooth operations.Approach for AUH scheduling, technician planning, and service coordination.", children: [
                 {
-                  name: "Jithin M", role: "B/D Coordinator", MailId: "jithin@silverlinerental.com",
-                  PhNo: "586051211",
-                  JobOverview: "Manages CICPA passes, service scheduling, and coordination with technicians and operations. Approach for CICPA access, service scheduling, technician coordination, and approvals.", children: []
+                  name: "Mohd Basith", role: "B/D Coordinator", MailId: "basith@silverlinerental.com",
+                  PhNo: "528950085",
+                  JobOverview: "", children: []
                 }
               ]
             },
