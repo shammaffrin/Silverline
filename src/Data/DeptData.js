@@ -1,6 +1,13 @@
 // src/Data/deptData.js
 
 export const deptData = {
+
+  People$Culture: {
+    title: "People & Culture",
+    overview:
+      "The People & Culture department fosters a positive work environment, manages talent acquisition, employee development, and promotes organizational culture to enhance employee engagement and satisfaction.",
+  },
+
   administration: {
     title: "Administration",
     overview:
