@@ -2,11 +2,9 @@ import OrgNode from "./OrgNode";
 
 export default function OrgChart({ data }) {
   return (
-    <div className="w-full  py-10 ">
-      <div className="flex justify-center">
-        <div className="inline-block min-w-max">
-          <OrgNode node={data} />
-        </div>
+    <div className="w-full overflow-x-auto py-6">
+      <div className="inline-flex min-w-full justify-center px-8">
+        <OrgNode node={data} />
       </div>
     </div>
   );
