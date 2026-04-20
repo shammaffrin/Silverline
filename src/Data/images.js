@@ -2,101 +2,128 @@ import shameela from "../assets/Management/shamila.jpeg";
 import aishwaryakb from "../assets/staff/AiswaryaKb.JPG";
 import miruthika from "../assets/staff/MIRUTHIKA.png";
 import ajooba from "../assets/staff/Ajooba.jpeg";
-import rakesh from "../assets/staff/Rakeshraju.jpeg";
-import Ashrafkcr from "../assets/staff/Ashrafkcr.jpeg";
+import rakesh from "../assets/staff/RAKESHRAJU.jpeg";
+
+import Ashrafkcr from "../assets/staff/AshrafKCR.jpeg";
 import Athari from "../assets/staff/Atharihamood.jpeg";
-import ShubasAli from "../assets/staff/shubasali.jpg";
+
+import ShubasAli from "../assets/staff/ShubasAli.jpg"; // fixed
 import roshan from "../assets/staff/roshan.jpg";
 import shivam from "../assets/staff/shivamgaur.jpg";
-import najma from "../assets/staff/najmashefik.jpeg";
+
+import najma from "../assets/staff/NajmaShefik.jpeg"; // fixed
 import shinas from "../assets/staff/shinas.jpeg";
 import nuzhat from "../assets/staff/NuzhatAshrafi.jpg";
-import Radhika from "../assets/staff/radhikam.png";
+
+import Radhika from "../assets/staff/RadhikaM.png"; // fixed
 import rajazain from "../assets/staff/rajazain.jpeg";
 import safi from "../assets/staff/safi.jpg";
+
 import noorudheen from "../assets/staff/noorudheenkp.jpeg";
 import ajmal from "../assets/staff/ajmalthahir.jpeg";
 import hannan from "../assets/staff/hannanub.png";
+
 import osama from "../assets/staff/mohamedosama.jpg";
 import elayarasan from "../assets/staff/elayarasan.png";
+
 import mhdabdulla from "../assets/staff/MohamedAbdulla.jpg";
 import akshay from "../assets/staff/akshaythomas.jpeg";
 import jaseel from "../assets/staff/jaseel.jpeg";
+
 import sabareswaran from "../assets/staff/sabareswaran.jpeg";
 import sahal from "../assets/staff/mohamedsahal.jpeg";
 import jithin from "../assets/staff/jithin.jpeg";
+
 import sooraj from "../assets/staff/sooraj.jpg";
 import ranju from "../assets/staff/ranju.jpg";
 import haseeb from "../assets/staff/haseebur.jpg";
+
 import sayooj from "../assets/staff/sayooj.jpeg";
 import arundas from "../assets/staff/arundas.jpeg";
 import gulam from "../assets/staff/gulam.jpg";
+
 import asarudheen from "../assets/staff/asar.jpg";
 import ajmalp from "../assets/staff/ajmalp.jpg";
 import basith from "../assets/staff/basith.jpeg";
+
 import shafi from "../assets/staff/shafipp.jpeg";
 import fahmi from "../assets/staff/fahmi.png";
 import ajsal from "../assets/staff/ajsal.jpg";
+
 import shanid from "../assets/staff/shanid.jpeg";
 import arafath from "../assets/staff/arafath.jpeg";
 import sahilabbas from "../assets/staff/sahilabbas.jpg";
+
 import rajesh from "../assets/staff/rajesh.jpg";
 import aneesp from "../assets/staff/aneesp.jpg";
+
 import vignesh from "../assets/staff/VIGNESHIYYAPPAN.jpg";
 import midhun from "../assets/staff/midhunraj.jpg";
 import dipin from "../assets/staff/dipin.jpeg";
-import lucky from "../assets/staff/luckykarnan.jpg";
-import vijay from "../assets/staff/vijayr.jpg";
-import naveensebi from "../assets/staff/naveensebi.jpeg";
-import sreenath from "../assets/staff/sreenaths.jpg";
+
+import lucky from "../assets/staff/LUCKYKARNAN.jpg"; // fixed
+import vijay from "../assets/staff/VijayR.jpg"; // fixed
+import naveensebi from "../assets/staff/NaveenSebi.jpeg"; // fixed
+
+import sreenath from "../assets/staff/Sreenaths.jpg"; // fixed
 import Mohdajmal from "../assets/staff/mohdajmal.png";
 import Vipin from "../assets/staff/vipindas.jpg";
+
 import adarsh from "../assets/staff/adarshv.jpg";
-import mohdsafwan from "../assets/staff/mohdsafwan.jpeg";
-import kiran from "../assets/staff/kiranbaig.jpeg";
+import mohdsafwan from "../assets/staff/MohdSafwan.jpeg"; // fixed
+import kiran from "../assets/staff/KiranBaig.jpeg"; // fixed
+
 import vigneshv from "../assets/staff/VigneshV.jpg";
 import abdulrahiman from "../assets/staff/AbdulRahiman.jpeg";
-import haris from "../assets/staff/harisb.jpg";
-import sarang from "../assets/staff/SARANG.jpeg"
-import thanzil from "../assets/Management/thanzil.jpeg"
-import hakeem from "../assets/staff/Abdul Hakeem.jpeg"
-import lakshmi from "../assets/staff/Lakshmi K.jpg"
-import ashil from "../assets/staff/ashil ashi.jpg"
-import afsal from "../assets/staff/Mohammed Afsal Nazar.jpeg"
-import anwar from "../assets/staff/Anwar Logistics.jpg"
-import ashrafkcr from "../assets/staff/AshrafKCR.jpeg"
-import ajeesh from "../assets/staff/AJEESH MS.jpg"
-import athira from "../assets/staff/Athira.JPG"
-import aswin from "../assets/staff/Aswin Silver.jpg"
-import ayishath from "../assets/staff/Ayishath Rinsana.png"
-import arun from "../assets/staff/Arundas.jpeg"
-import aswathy from "../assets/staff/Aswathy.jpg"
-import anju from "../assets/staff/Anju Aravind.jpg"
-import ashrafk from "../assets/staff/Ashraf Kandothmeethal.jpeg"
-import ajeeshbiju from "../assets/staff/AJEESH BIJU.jpg"
-// import diya from "../assets/staff/"
-// import fasil from "../assets/staff/"
-import irshan from "../assets/staff/Irshan K.png"
-// import jesvin from "../assets/staff/"
-import misab from "../assets/staff/misab.jpeg"
-import nabeel from "../assets/staff/Nabeel Sha.png"
-import nishad from "../assets/staff/nishad muhammedap.jpg"
-// import rajthomas from "../assets/staff/"
-import rithu from "../assets/staff/RITHUPARNAG H PP.jpeg"
-// import shammil from "../assets/staff/"
-import shabeer from "../assets/staff/shabeer o.jpeg"
-import sifin from "../assets/staff/Mohammad Sifin.jpeg"
-import sharath from "../assets/staff/Sharath Krishnan Kalloor.jpeg"
-// import saif from "../assets/staff/"
-import sainudeen from "../assets/staff/Sainudheen Tt.png"
-import sayoojya from "../assets/staff/Sayoojya.jpeg"
-// import shibil from "../assets/staff/"
-import shehin from "../assets/staff/Shehin Malik.jpeg"
-import sreejith from "../assets/staff/Sreejith Vp.jpg"
-// import stefy from "../assets/staff/"
-import safna from "../assets/staff/Safna Nizar.png"
-import shahina from "../assets/staff/SHAHINA MN.jpeg"
-import shahanas from "../assets/staff/shahanas vs.png"
+import haris from "../assets/staff/HarisB.jpg"; // fixed
+
+import sarang from "../assets/staff/SARANG.jpeg";
+import thanzil from "../assets/Management/thanzil.jpeg";
+
+import hakeem from "../assets/staff/Abdul Hakeem.jpeg";
+import lakshmi from "../assets/staff/Lakshmi K.jpg";
+import ashil from "../assets/staff/ashil ashi.jpg";
+
+import afsal from "../assets/staff/Mohammed Afsal Nazar.jpeg";
+import anwar from "../assets/staff/Anwar Logistics.jpg";
+
+import ashrafkcr from "../assets/staff/AshrafKCR.jpeg";
+import ajeesh from "../assets/staff/AJEESH MS.jpg";
+
+import athira from "../assets/staff/Athira.JPG";
+import aswin from "../assets/staff/Aswin Silver.jpg";
+
+import ayishath from "../assets/staff/Ayishath Rinsana.png";
+import arun from "../assets/staff/Arundas.jpeg";
+
+import aswathy from "../assets/staff/Aswathy.jpg";
+import anju from "../assets/staff/Anju Aravind.jpg";
+
+import ashrafk from "../assets/staff/Ashraf Kandothmeethal.jpeg";
+import ajeeshbiju from "../assets/staff/AJEESH BIJU.jpg";
+
+import irshan from "../assets/staff/Irshan K.png";
+import misab from "../assets/staff/misab.jpeg";
+
+import nabeel from "../assets/staff/Nabeel Sha.png";
+import nishad from "../assets/staff/nishad muhammedap.jpg";
+
+import rithu from "../assets/staff/RITHUPARNAG H PP.jpeg";
+import shabeer from "../assets/staff/shabeer o.jpeg";
+
+import sifin from "../assets/staff/Mohammad Sifin.jpeg";
+import sharath from "../assets/staff/Sharath Krishnan Kalloor.jpeg";
+
+import sainudeen from "../assets/staff/Sainudheen Tt.png";
+import sayoojya from "../assets/staff/Sayoojya.jpeg";
+
+import shehin from "../assets/staff/Shehin Malik.jpeg";
+import sreejith from "../assets/staff/Sreejith Vp.jpg";
+
+import safna from "../assets/staff/Safna Nizar.png";
+import shahina from "../assets/staff/SHAHINA MN.jpeg";
+
+import shahanas from "../assets/staff/shahanas vs.png";
 
 
 export {
